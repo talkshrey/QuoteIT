@@ -16,7 +16,7 @@ import {
 import { kCardColor1 } from '../constants/colors';
 
 const Login = () => (
-
+  
   
   <View style={styles.mainContainer}>
 
