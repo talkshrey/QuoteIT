@@ -1,19 +1,28 @@
 import Quotation from '../models/Quotation.js';
+import User from '../models/User.js';
 
-//Create a new query
-const createQuote = async (req, res) => {
+//Create a new quote
+const createQuotation = async (req, res) => {
+  //console.log(req.user.contact);
   try {
-    const query = new Query({
+    const quotation = new Quotation({
       ...req.body,
       quotedBy: req.user.id, //since logged in as vendor
-      quotedTo: req.user.id,
-      quoteOf: 
+      vendorContact: req.user.contact 
       });
+    
+    const user = await User.findOne({email: req.body.quotedToEmail})
+    if(!user) {
+      res.status(404).json({
+                success: false,
+                message : 'User not found'
+            })
+    }
 
-    await query.save();
+    await quotation.save();
     res.status(201).json({
       success: true,
-      query
+      quotation
     });
   } catch (e) {
     res.status(400).json({
@@ -22,3 +31,5 @@ const createQuote = async (req, res) => {
     });
   }
 };
+
+export { createQuotation }
