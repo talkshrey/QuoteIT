@@ -1,0 +1,178 @@
+{
+  "category-app": [
+    {
+      "id": 1,
+      "category-name": "Appliances"
+    },
+    {
+      "id": 2,
+      "category-name": "Raw materials"
+    },
+    {
+      "id": 3,
+      "category-name": "Healthcare"
+    },
+    {
+      "id": 4,
+      "category-name": "Cars"
+    },
+    {
+      "id": 5,
+      "category-name": "Beauty"
+    },
+    {
+      "id": 6,
+      "category-name": "Fashion"
+    }
+  ],
+  "category-web": [
+    {
+      "id": 1,
+      "category-name": "Appliances"
+    },
+    {
+      "id": 2,
+      "category-name": "Raw materials"
+    },
+    {
+      "id": 3,
+      "category-name": "Healthcare"
+    },
+    {
+      "id": 4,
+      "category-name": "Cars"
+    }
+  ],
+  "sub-category-appliance": [
+    {
+      "id": "1",
+      "subCatName": "Laptop"
+    },
+    {
+      "id": "2",
+      "subCatName": "Fridge"
+    },
+    {
+      "id": "3",
+      "subCatName": "Washing Machine"
+    },
+    {
+      "id": "4",
+      "subCatName": "Television"
+    },
+    {
+      "id": "5",
+      "subCatName": "Microwave"
+    }
+  ],
+  "sub-category-raw-materials": [
+    {
+      "id": "1",
+      "subCatName": "Cement"
+    },
+    {
+      "id": "2",
+      "subCatName": "Plates"
+    },
+    {
+      "id": "3",
+      "subCatName": "Wires"
+    },
+    {
+      "id": "4",
+      "subCatName": "Wood"
+    },
+    {
+      "id": "5",
+      "subCatName": "Cloth"
+    }
+  ],
+  "sub-category-Healthcare": [
+    {
+      "id": "1",
+      "subCatName": "Nebulisers"
+    },
+    {
+      "id": "2",
+      "subCatName": "Oximeter"
+    },
+    {
+      "id": "3",
+      "subCatName": "Masks"
+    },
+    {
+      "id": "4",
+      "subCatName": "Oxygen Concentrator"
+    },
+    {
+      "id": "5",
+      "subCatName": "Stethoscope"
+    }
+  ],
+  "sub-category-cars": [
+    {
+      "id": "1",
+      "subCatName": "Toyota"
+    },
+    {
+      "id": "2",
+      "subCatName": "Hyundai"
+    },
+    {
+      "id": "3",
+      "subCatName": "Maruti"
+    },
+    {
+      "id": "4",
+      "subCatName": "Tata"
+    },
+    {
+      "id": "5",
+      "subCatName": "Honda"
+    }
+  ],
+  "sub-category-beauty": [
+    {
+      "id": "1",
+      "subCatName": "Nivea"
+    },
+    {
+      "id": "2",
+      "subCatName": "Garnier"
+    },
+    {
+      "id": "3",
+      "subCatName": "Pantene"
+    },
+    {
+      "id": "4",
+      "subCatName": "Dove"
+    },
+    {
+      "id": "5",
+      "subCatName": "Maybelline"
+    }
+  ],
+  "sub-category-fashion": [
+    {
+      "id": "1",
+      "subCatName": "H&M"
+    },
+    {
+      "id": "2",
+      "subCatName": "Zara"
+    },
+    {
+      "id": "3",
+      "subCatName": "Forever 21"
+    },
+    {
+      "id": "4",
+      "subCatName": "Levis"
+    },
+    {
+      "id": "5",
+      "subCatName": "Allen Solly"
+    }
+  ]
+}
