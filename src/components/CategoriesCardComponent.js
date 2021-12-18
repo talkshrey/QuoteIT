@@ -4,9 +4,10 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { kCardColor1 } from '../constants/colors';
 
-
+const images = ["appliances.jpg", "appliances.jpg", "appliances.jpg" , "appliances.jpg", "appliances.jpg", "appliances.jpg"];
 
 const CategoriesCardComponent = (props) => {
+     
     const [show, setShow] = useState(false);
 
     const showMore = () => {
@@ -16,7 +17,7 @@ const CategoriesCardComponent = (props) => {
         <View style={{...styles.card, backgroundColor:props.color}}>
             <TouchableOpacity onPress={showMore}>
                 <View style={styles.header}>
-                    <Text style={styles.textStyle}>Appliances</Text>
+                    <Text style={styles.textStyle}>{props.title}</Text>
                     <View style={{ marginTop: 10, marginLeft: 20 }}>
                         {show ?
                             <Ionicons
@@ -37,7 +38,7 @@ const CategoriesCardComponent = (props) => {
                 show ?
                     <View>
                         <ImageBackground style={styles.imageContainer}
-                            source={require('../assets/images/appliances.jpg')
+                            source={require(`../assets/images/appliances.jpg`)
                             }>
                         </ImageBackground>
                         <View style={{ marginLeft: 20, marginRight: 20, justifyContent: 'center', alignItems: 'center' }}>
