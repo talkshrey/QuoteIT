@@ -12,78 +12,90 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
+import { kCardColor1 } from '../constants/colors';
 
 const Login = () => (
-  <LinearGradient
-    colors={['#1A1B2F', '#162447', '#1F4068']}
-    style={styles.linearGradient}>
-    <Text style={styles.header}>" QuoteIT "</Text>
-    <View style={styles.container}>
-      <Text style={styles.label}>WELCOME BACK!</Text>
-      <Text style={styles.desc}>Login to your account</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Email"
-        keyboardType="email-address"
-        autoCompleteType="email"
-        autoCapitalize="none"></TextInput>
-      <TextInput
-        style={styles.input}
-        placeholder="Password"
-        keyboardType="visible-password"
-        autoCompleteType="password"
-        autoCapitalize="none"></TextInput>
-      <View>
-        <View style={styles.container2}>
-          <View style={{flex: 1, flexDirection: 'row'}}>
-            <Text style={{color: 'black', marginLeft: 5}}>Remember me</Text>
-          </View>
-          <View>
-            <TouchableOpacity>
-              <Text style={{color: 'black', fontWeight: '700'}}>
-                Forgot Password?
-              </Text>
-            </TouchableOpacity>
+
+  
+  <View style={styles.mainContainer}>
+
+      <Text style={styles.header}>QuoteIT</Text>
+      {/* <Ionicons
+    name="chevron-forward-circle-outline"
+    size={50}
+    color="white"
+    style={{position:'absolute', marginTop:hp('27%') }}></Ionicons> */}
+      <View style={styles.container}>
+
+        <Text style={styles.label}>WELCOME BACK!</Text>
+        <Text style={styles.desc}>Login to your account</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Email"
+          keyboardType="email-address"
+          autoCompleteType="email"
+          autoCapitalize="none"></TextInput>
+        <TextInput
+          style={styles.input}
+          placeholder="Password"
+          keyboardType="visible-password"
+          autoCompleteType="password"
+          autoCapitalize="none"></TextInput>
+        <View>
+          <View style={styles.container2}>
+            <View style={{ flex: 1, flexDirection: 'row' }}>
+              <Text style={{ color: 'black', marginLeft: 5 }}>Remember me</Text>
+            </View>
+            <View>
+              <TouchableOpacity>
+                <Text style={{ color: 'black', fontWeight: '700' }}>
+                  Forgot Password?
+                </Text>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
       </View>
-    </View>
-  </LinearGradient>
+  </View>
 );
 export default Login;
 const styles = StyleSheet.create({
-  linearGradient: {
+  mainContainer: {
     flex: 1,
     paddingLeft: 15,
     paddingRight: 15,
     borderRadius: 5,
+    backgroundColor:kCardColor1
   },
   container: {
     height: hp('80%'),
     width: wp('100%'),
-    backgroundColor: '#e33e5a',
+    backgroundColor: '#F5796D',
     marginTop: 100,
     alignSelf: 'center',
     borderTopRightRadius: 60,
+    borderTopLeftRadius: 60,
   },
   header: {
     textAlign: 'center',
     color: 'white',
     fontWeight: 'bold',
-    fontSize: 50,
+    fontSize: 60,
     marginTop: 70,
   },
   label: {
     color: '#1A1B2F',
-    fontSize: wp('6%'),
-    marginLeft: 40,
-    marginTop: 20,
-    fontWeight:'bold',
+    textAlign: 'center',
+    fontSize: wp('7%'),
+    // marginLeft: 40,
+    marginTop: 70,
+    fontWeight: 'bold',
   },
   desc: {
     color: '#1A1B2F',
-    fontSize: wp('4.1%'),
-    marginLeft: 40,
+    textAlign: 'center',
+    fontSize: wp('5%'),
+    // marginLeft: 40,
     marginTop: 2,
   },
   input: {
