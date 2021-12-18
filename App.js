@@ -6,17 +6,19 @@ import AppliancesDetails from './src/screens/AppliancesDetails';
 import Login from './src/screens/Login';
 import Splash from './src/screens/Splash';
 import Register from './src/screens/Register';
+import ProductDetails from './src/screens/ProductDetails';
 
 const Stack = createStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Splash">
+      <Stack.Navigator initialRouteName="TopTabNavigation">
         <Stack.Screen name='Login' component={Login} options={{ headerShown: false }}></Stack.Screen>
         <Stack.Screen name='Register' component={Register} options={{ headerShown: false }}></Stack.Screen>
         <Stack.Screen name='Splash' component={Splash} options={{ headerShown: false }}></Stack.Screen>
         <Stack.Screen name='TopTabNavigation' component={TopTabNavigation} options={{ headerShown: false }}></Stack.Screen>
         <Stack.Screen name='AppliancesDetails' component={AppliancesDetails} options={{ headerShown: false }}></Stack.Screen>
+        <Stack.Screen name='ProductDetails' component={ProductDetails} options={{ headerShown: false }}></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );
