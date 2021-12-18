@@ -1,33 +1,44 @@
-
-import React, {useState,useEffect} from 'react';
-import {View, StyleSheet,FlatList,Text} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {View, StyleSheet, FlatList, Text} from 'react-native';
 function ProductDetails({route}) {
-  const [data, setData] = useState([]);
-  let url = route.params;
+  
+  var url = route.params;
   console.log(url);
 
   useEffect(() => {
-    await fetch(url)
-      .then(response => response.json())
-      .then(json => setData(json));
-      console.log(data);
+    getSubCategories();
   }, []);
+  const [subcategory, setSubcategory] = useState([]);
+
+  const getSubCategories = async () => {
+    var requestOptions = {
+      method: 'GET',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow',
+    };
+    await fetch(url, requestOptions)
+      .then(response => response.json())
+      .then(result =>  setSubcategory(result), console.log(result))
+      .catch(error => console.log('error', error));
+  };
   return (
-    <View>
-      {/* <FlatList
-        data={data}
-        keyExtractor={item => item.id}
-        renderItem={({item}) => 
-          <Text>{item.subCatName}</Text>
-        }
-      /> */}
+    <View style={styles.container}>
+        <Text style={styles.header}>SUB-CATEGORIES ITEM LIST</Text>
     </View>
   );
 }
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor:'#162447',
   },
+  header:{
+      textAlign:'center',
+      color:'white',
+      marginTop:'20',
+      fontWeight:'700',
+
+  }
 });
 export default ProductDetails;
-
