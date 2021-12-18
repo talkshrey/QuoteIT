@@ -7,8 +7,10 @@ import {
 import CategoriesCardComponent from '../../components/CategoriesCardComponent';
 import LinearGradient from 'react-native-linear-gradient';
 import { kCardColor1, kCardColor2, kCardColor3 } from '../../constants/colors';
+import ProductDetails from '../ProductDetails';
 
-function MarketScreen() {
+
+function MarketScreen({navigation}) {
    const url =[
     'http://localhost:5000/sub-category-appliance',
     'http://localhost:5000/sub-category-raw-materials',

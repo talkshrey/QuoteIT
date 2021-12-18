@@ -1,9 +1,10 @@
+
 import React, {useState,useEffect} from 'react';
 import {View, StyleSheet,FlatList,Text} from 'react-native';
 function ProductDetails({route}) {
   const [data, setData] = useState([]);
   let url = route.params;
-  console.log(url)
+  console.log(url);
 
   useEffect(() => {
     await fetch(url)
@@ -29,3 +30,4 @@ const styles = StyleSheet.create({
   },
 });
 export default ProductDetails;
+

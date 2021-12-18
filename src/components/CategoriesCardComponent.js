@@ -44,7 +44,7 @@ const CategoriesCardComponent = (props) => {
                         <View style={{ marginLeft: 20, marginRight: 20, justifyContent: 'center', alignItems: 'center' }}>
                             <Text style={{ textAlign: 'center', color: 'white' }} >ghdjhfgdsghfghgjhkscgbmlkxfbhokfcgnbjgcknbklgfcnzblkzfcnblzcvnbjnbjkndfbjkcdzfkjkjg</Text>
                         </View>
-                        <TouchableOpacity onPress={props.onPress} >
+                        <TouchableOpacity onPress={props.onPress}>
                             <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: 10, marginBottom: 10 }}>
 
                                 <Text style={{ color: 'white' }}>To Explore</Text>
