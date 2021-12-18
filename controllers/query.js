@@ -11,9 +11,11 @@ const createQuery = async (req, res) => {
     })
 
     const vendors = await User.find({ sells: query.productModel})
-    //console.log(query.productModel);
+    console.log(query.productModel);
     await query.save()
-    for(var i =0; i< vendors.length(); )
+    // for(var i = 0; i< vendors.length(); i++){
+      
+    // }
     console.log(vendors[i])
     res.status(201).json({
       success: true,
