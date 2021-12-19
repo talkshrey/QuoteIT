@@ -9,6 +9,10 @@ const QuotationSchema = new mongoose.Schema({
         type: Number,
         required: [true, 'Please provide your contact']
     },
+    vedorName: {
+        type: String,
+        required: [true, 'Please provide your contact']
+    },
     rawPrice: {
         type: Number,
         required: [true, 'Please provide the raw price']

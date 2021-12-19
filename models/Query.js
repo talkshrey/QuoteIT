@@ -9,7 +9,7 @@ const QuerySchema = new mongoose.Schema({
     queriedTo: {
         type: Array,
         required: true,
-        // ref:'Vendor'
+        // ref:'Vendor' 
     },
     productName: {
         type: String,

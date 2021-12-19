@@ -1,6 +1,7 @@
 import express from'express'
 import auth from'../middleware/auth.js'
 import isClient from'../middleware/isCLient.js'
+import isVendor from'../middleware/isVendor.js'
 import {
   registerNewUser,
   loginUser,
@@ -9,7 +10,8 @@ import {
   getProfile,
   updateUser,
   deleteUser,
-  getClientDashboard
+  getClientDashboard,
+  //getVendorDashboard
 } from'../controllers/user.js'
 
 const router = new express.Router()
@@ -39,9 +41,9 @@ router.delete('/delete', auth, deleteUser)
 router.get('/client/dashboard', auth, isClient, getClientDashboard)
 
 
-// // FOR VENDORS 
-// //Get Vendor Dashboard
-// router.get('/vendor/dashboard', auth, isVendor, getVendorDashboard)
+// FOR VENDORS 
+//Get Vendor Dashboard
+//router.get('/vendor/dashboard', auth, isVendor, getVendorDashboard)
 
 
 

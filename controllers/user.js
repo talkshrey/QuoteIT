@@ -1,5 +1,7 @@
 import User from '../models/User.js';
 import Quotation from '../models/Quotation.js';
+import Query from '../models/Query.js';
+//import { sendWelcomeEmail } from '../emails/account.js';
 
 //Register a user
 const registerNewUser = async (req, res) => {
@@ -7,8 +9,11 @@ const registerNewUser = async (req, res) => {
     const user = new User(req.body);
     const token = await user.generateAuthToken();
     await user.save();
+    console.log(user)
+    //sendWelcomeEmail(user.email, user.name, user.role);
     res.status(201).send(token);
   } catch (e) {
+      console.log('ERROR'),
     res.status(400).json({
       success: false,
       message: e.message,
@@ -140,6 +145,7 @@ const deleteUser = async (req, res) => {
 const getClientDashboard = async (req, res) => {
   try {
     const quotations = await Quotation.find({quotedToEmail: req.user.email})
+    console.log(quotations);
     res.json({
       success: true,
       data: quotations,
@@ -152,6 +158,34 @@ const getClientDashboard = async (req, res) => {
   }
 }
 
+//Get Vendor Dashboard
+
+// const getVendorDashboard = async (req, res) => {
+//   try {
+//     const queries = await Query.find({})
+//    console.log(typeof(queries));
+//     const queriesToDisplay = []
+//     //console.log(queries[0].queriedTo[0]); 
+//     queries.forEach(query, index => {
+//          console.log(index);
+//        if(query.queriedTo[index].email === req.user.email){
+//          queriesToDisplay.push(query)
+//        }
+//        console.log(queriesToDisplay);
+//     });
+//     res.json({
+//       success: true,
+//       data: queriesToDisplay,
+//     });
+//   } catch (e) {
+//     res.status(500).json({
+//       success: false,
+//       message: e.message,
+//     });
+//   }
+// }
+
+
 export {
   registerNewUser,
   loginUser,
@@ -160,5 +194,6 @@ export {
   getProfile,
   updateUser,
   deleteUser,
-  getClientDashboard
+  getClientDashboard,
+  //getVendorDashboard
 };

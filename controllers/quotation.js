@@ -1,5 +1,6 @@
 import Quotation from '../models/Quotation.js';
 import User from '../models/User.js';
+//import { sendNotification } from '../emails/account.js';
 
 //Create a new quote
 const createQuotation = async (req, res) => {
@@ -8,7 +9,8 @@ const createQuotation = async (req, res) => {
     const quotation = new Quotation({
       ...req.body,
       quotedBy: req.user.id, //since logged in as vendor
-      vendorContact: req.user.contact 
+      vendorContact: req.user.contact,
+      vendorName: req.user.name
       });
     
     const user = await User.findOne({email: req.body.quotedToEmail})
@@ -20,6 +22,7 @@ const createQuotation = async (req, res) => {
     }
 
     await quotation.save();
+    //sendNotification(user.email, quotation.quoteOf)
     res.status(201).json({
       success: true,
       quotation
