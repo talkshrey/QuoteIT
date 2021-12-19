@@ -41,7 +41,7 @@ function MarketScreen({navigation}) {
                 <CategoriesCardComponent
                     color={kCardColor1}
                     title={item["category-name"]}
-                    onPress={()=>navigation.navigate('ProductDetails',url[index])} />
+                    onPress={()=>navigation.navigate('ProductDetails',{u:url[index],c:item["category-name"]})} />
             </View>
 
         )

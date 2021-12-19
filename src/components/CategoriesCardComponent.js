@@ -38,7 +38,7 @@ const CategoriesCardComponent = (props) => {
                 show ?
                     <View>
                         <ImageBackground style={styles.imageContainer}
-                            source={require(`../assets/images/appliances.jpg`)
+                            source={require(`../assets/images/appliances.png`)
                             }>
                         </ImageBackground>
                         <View style={{ marginLeft: 20, marginRight: 20, justifyContent: 'center', alignItems: 'center' }}>
