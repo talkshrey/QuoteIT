@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {View, StyleSheet, FlatList, Text, Image} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+
 function ProductDetails({route}) {
   var category = route.params.c;
   var url = route.params.u;
