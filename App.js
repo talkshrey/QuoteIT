@@ -7,6 +7,8 @@ import Login from './src/screens/Login';
 import Splash from './src/screens/Splash';
 import Register from './src/screens/Register';
 import ProductDetails from './src/screens/ProductDetails';
+import ModelDetails from './src/screens/ModelDetails';
+import Output from './src/screens/Output';
 
 const Stack = createStackNavigator();
 function App() {
@@ -19,6 +21,9 @@ function App() {
         <Stack.Screen name='TopTabNavigation' component={TopTabNavigation} options={{ headerShown: false }}></Stack.Screen>
         <Stack.Screen name='AppliancesDetails' component={AppliancesDetails} options={{ headerShown: false }}></Stack.Screen>
         <Stack.Screen name='ProductDetails' component={ProductDetails} options={{ headerShown: false }}></Stack.Screen>
+        <Stack.Screen name='ModelDetails' component={ModelDetails} options={{ headerShown: false }}></Stack.Screen>
+        <Stack.Screen name='Output' component={Output} options={{ headerShown: false }}></Stack.Screen>
+
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {View, StyleSheet, FlatList, Text, Image} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
-function ProductDetails({route}) {
+function ProductDetails({navigation,route}) {
   var category = route.params.c;
   var url = route.params.u;
   console.log(url);
@@ -87,7 +87,7 @@ function ProductDetails({route}) {
         return (
           <View>
             <Image
-              style={{width: '15%', height: '15%'}}
+              style={{width: 100, height: 100}}
               source={require('../assets/images/cars.png')}></Image>
           </View>
         );
@@ -95,7 +95,7 @@ function ProductDetails({route}) {
         return (
           <View>
             <Image
-              style={{width: '15%', height: '15%'}}
+              style={{width: 100, height: 100}}
               source={require('../assets/images/beauty.png')}></Image>
           </View>
         );
@@ -103,7 +103,7 @@ function ProductDetails({route}) {
         return (
           <View>
             <Image
-              style={{width: '15%', height: '15%'}}
+              style={{width: 100, height: 100}}
               source={require('../assets/images/fashion.png')}></Image>
           </View>
         );
@@ -120,7 +120,9 @@ function ProductDetails({route}) {
                 style={{width: 100, height: 100}}
                 source={images[index].image}
               />
+              <TouchableOpacity onPress={()=>navigation.navigate('ModelDetails',{f:'https://glacial-harbor-01488.herokuapp.com/models_api',x:category,s:item['subCatName']})}>
               <Text>{item['subCatName']}</Text>
+              </TouchableOpacity>
             </View>
           </View>
         );

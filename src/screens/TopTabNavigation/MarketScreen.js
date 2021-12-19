@@ -12,12 +12,12 @@ import ProductDetails from '../ProductDetails';
 
 function MarketScreen({navigation}) {
    const url =[
-    'http://localhost:5000/sub-category-appliance',
-    'http://localhost:5000/sub-category-raw-materials',
-    'http://localhost:5000/sub-category-Healthcare',
-    'http://localhost:5000/sub-category-cars',
-    'http://localhost:5000/sub-category-beauty',
-    'http://localhost:5000/sub-category-fashion',
+    'https://glacial-harbor-01488.herokuapp.com/sub-category-appliance',
+    'https://glacial-harbor-01488.herokuapp.com/sub-category-raw-materials',
+    'https://glacial-harbor-01488.herokuapp.com/sub-category-Healthcare',
+    'https://glacial-harbor-01488.herokuapp.com/sub-category-cars',
+    'https://glacial-harbor-01488.herokuapp.com/sub-category-beauty',
+    'https://glacial-harbor-01488.herokuapp.com/sub-category-fashion',
    ]
     useEffect(() => {
         getCategories();
@@ -30,7 +30,7 @@ function MarketScreen({navigation}) {
             method: 'GET',
             redirect: 'follow'
         };
-        await fetch("http://localhost:5000/category-app", requestOptions)
+        await fetch("https://glacial-harbor-01488.herokuapp.com/category-app", requestOptions)
             .then(response => response.json())
             .then(result => setcategory(result))
             .catch(error => console.log('error', error));
@@ -56,18 +56,6 @@ function MarketScreen({navigation}) {
                     keyExtractor={(item) => item.index}
                     renderItem={renderItem}
                 />
-                {/* 
-                
-                {/* <View>
-
-                </View>
-                <View>
-
-                </View>
-                <View>
-
-                </View> */}
-
             </LinearGradient>
         </View>
     )
