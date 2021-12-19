@@ -62,7 +62,6 @@ const Navigator = () => {
                     <Stack.Screen name='Login' component={Login} options={{ headerShown: false }}></Stack.Screen>
                     <Stack.Screen name='Register' component={Register} options={{ headerShown: false }}></Stack.Screen>
                     <Stack.Screen name='Splash' component={Splash} options={{ headerShown: false }}></Stack.Screen>
-                   
                 </Stack.Navigator>
             }
         </NavigationContainer>

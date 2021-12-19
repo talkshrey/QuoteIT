@@ -35,7 +35,10 @@ function ModelDetails({route, navigation}) {
     return (
       <View>
         <Image style={{width: 200, height: 200}} source={images[index].image} />
-        <Text>{item['model']}</Text>
+        <TouchableOpacity  onPress={() =>
+          navigation.navigate('Output', {m: category, s: subcategory,o:item['model']})
+        }>
+        <Text>{item['model']}</Text></TouchableOpacity>
       </View>
     );
   };
@@ -48,11 +51,11 @@ function ModelDetails({route, navigation}) {
         keyExtractor={item => item.index}
         renderItem={renderItem}
       />
-      <Button
+      {/* <Button
         title="Confirm"
         onPress={() =>
           navigation.navigate('Output', {m: category, s: subcategory})
-        }></Button>
+        }></Button> */}
     </View>
   );
 }
