@@ -1,8 +1,5 @@
 import { useState } from "react";
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
-import login from "../Assets/Images/login.png"
-import open from '../Assets/Icons/open.png'
-import close from '../Assets/Icons/close.png'
 import { TextField } from "@mui/material";
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';

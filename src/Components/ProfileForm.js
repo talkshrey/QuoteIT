@@ -23,16 +23,13 @@ import { Link } from "react-router-dom";
     },[])
 
     return (
-        <div>
+        <div className="text-white">
             <h3> Profile </h3>
             <div>{prof._id}</div>
             <div>{prof.name}</div>
             <div>{prof.email}</div>
             <div>{prof.contact}</div>
             <div>{prof.role}</div>
-
-            <Link to={`/update/${prof._id}`}> <button className="px-4 py-2 bg-red-200 rounded-md"> Update </button> </Link>
-            
         </div>
     )
 }

@@ -68,7 +68,17 @@ export default function Booking2(props) {
                         <div className="flex flex-row items-center justify-around">
                             <img src={laptop} alt="laptop" className="w-32"/>
                             <button type="button" className="px-5 py-3 bg-red-200 rounded-md" onClick={() => setOpen(o => !o)}> {data[0].subCatName} </button>
-                            <Pops o={open} c={closeModal} model="laptop"/>
+                            <Popup open={props.o} closeOnDocumentClick onClose={props.c} position="right top">
+                                <div className="w-max h-max bg-gradient-to-r from-red-200 to-blue-500 rounded-md p-5">
+                                    <button className="rounded-full bg-white text-black px-2 text-3xl" onClick={props.c}> &times; </button>
+                                    <div className="flex flex-row justify-around">
+                                        <Link to="appliance/laptop1"> <p> Laptop 1 </p> <img src={laptop} alt="laptop" className="w-32"/> </Link>
+                                        <Link to="laptop2"> <p> Laptop 2 </p> <img src={laptop} alt="laptop" className="w-32"/> </Link>
+                                        <Link to="laptop3"> <p> Laptop 3 </p> <img src={laptop} alt="laptop" className="w-32"/> </Link>
+                                    </div>
+                                    <button/>
+                                </div>
+                            </Popup>
                         </div>
                     </Item>
                     <br/>

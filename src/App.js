@@ -13,6 +13,13 @@ import Booking4 from './Components/Booking4';
 import FinalQuery from './Pages/FinalQuery';
 
 function App() {
+
+  // const PrivateRoute = ({ component: Component, ...rest }) => (
+  //   <Route {...rest} render={(props) => (
+  //       token? <Component {...props} /> : <Login setToken={setToken} />
+  //   )} />
+  // )
+
   return (
     <Router>
       <div className='w-screen h-screen'>
@@ -20,17 +27,17 @@ function App() {
           <Route exact path="/" component={FinalHome}/>
           <Route path="/login" component={FinalLogin}/>
           <Route path="/register" component={FinalRegister}/>
-          {/* <Route path="/profile" component={<FinalProfile/>}/>
-          <Route path="product/cars" component={<Booking1/>}/>
-          <Route path="product/appliances" component={<Booking2/>}/>
-          <Route path="product/fashion" component={<Booking3/>}/>
-          <Route path="product/raw" component={<Booking4/>}/>
-          <Route path="/product/appliances/:model" exact component={<FinalQuery cat="appliances"/>}/>
-          <Route path="/product/fashion/:model" exact component={<FinalQuery cat="fashion"/>}/>
-          <Route path="/product/cars/:model" exact component={<FinalQuery cat="cars"/>}/>
-          <Route path="/product/raw/:model" exact component={<FinalQuery cat="raw"/>}/>
-          <Route path="/vendor" component={<FinalVendor/>}/>
-          <Route path="/userdash" component={<FinalUserDashBoard/>}/> */}
+          <Route path="/profile" component={FinalProfile}/>
+          <Route path="/product/cars/" component={Booking1}/>
+          <Route path="/product/appliances/" component={Booking2}/>
+          <Route path="/product/fashion/" component={Booking3}/> 
+          <Route path="/product/raw/" component={Booking4}/>
+          {/* <Route path="product/appliances/laptop1" component={FinalQuery}/>
+          <Route path="/product/fashion/:model" component={FinalQuery}/>
+          <Route path="/product/cars/:model" component={FinalQuery}/> */}
+          <Route path="/query" component={FinalQuery}/>
+          <Route path="/vendor" component={FinalVendor}/>
+          <Route path="/userdash" component={FinalUserDashBoard}/>
         </Switch>
       </div>
     </Router>

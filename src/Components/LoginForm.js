@@ -31,9 +31,13 @@ export default function LoginForm() {
 
         fetch("http://localhost:3001/api/user/login/", requestOptions)
         .then(response => response.text())
-        .then(result => setTok(result))
+        .then(result => {
+            setTok(result)
+            console.log(result)
+        })
         .catch(error => console.log('error', error));
     }
+    
     localStorage.setItem('token', tok)
 
     return (
