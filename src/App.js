@@ -1,5 +1,5 @@
-import { Route, Routes } from 'react-router';
-import { BrowserRouter as Router } from 'react-router-dom';
+// import { Route, Routes } from 'react-router';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import FinalLogin from './Pages/FinalLogin';
 import FinalRegister from './Pages/FinalRegister';
 import FinalHome from './Pages/FinalHome'
@@ -16,22 +16,22 @@ function App() {
   return (
     <Router>
       <div className='w-screen h-screen'>
-        <Routes>
-          <Route exact path="/" element={<FinalHome/>}/>
-          <Route path="/login" element={<FinalLogin/>}/>
-          <Route path="/register" element={<FinalRegister/>}/>
-          <Route path="/profile" element={<FinalProfile/>}/>
-          <Route path="product/cars" element={<Booking1/>}/>
-          <Route path="product/appliances" element={<Booking2/>}/>
-          <Route path="product/fashion" element={<Booking3/>}/>
-          <Route path="product/raw" element={<Booking4/>}/>
-          <Route path="/product/appliances/:model" exact element={<FinalQuery cat="appliances"/>}/>
-          <Route path="/product/fashion/:model" exact element={<FinalQuery cat="fashion"/>}/>
-          <Route path="/product/cars/:model" exact element={<FinalQuery cat="cars"/>}/>
-          <Route path="/product/raw/:model" exact element={<FinalQuery cat="raw"/>}/>
-          <Route path="/vendor" element={<FinalVendor/>}/>
-          <Route path="/userdash" element={<FinalUserDashBoard/>}/>
-        </Routes>
+        <Switch>
+          <Route exact path="/" component={FinalHome}/>
+          <Route path="/login" component={FinalLogin}/>
+          <Route path="/register" component={FinalRegister}/>
+          {/* <Route path="/profile" component={<FinalProfile/>}/>
+          <Route path="product/cars" component={<Booking1/>}/>
+          <Route path="product/appliances" component={<Booking2/>}/>
+          <Route path="product/fashion" component={<Booking3/>}/>
+          <Route path="product/raw" component={<Booking4/>}/>
+          <Route path="/product/appliances/:model" exact component={<FinalQuery cat="appliances"/>}/>
+          <Route path="/product/fashion/:model" exact component={<FinalQuery cat="fashion"/>}/>
+          <Route path="/product/cars/:model" exact component={<FinalQuery cat="cars"/>}/>
+          <Route path="/product/raw/:model" exact component={<FinalQuery cat="raw"/>}/>
+          <Route path="/vendor" component={<FinalVendor/>}/>
+          <Route path="/userdash" component={<FinalUserDashBoard/>}/> */}
+        </Switch>
       </div>
     </Router>
   );
