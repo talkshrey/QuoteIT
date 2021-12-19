@@ -59,6 +59,7 @@ export const AuthProvider = ({ children }) => {
                                     ]);
                                 } else {
                                     console.log(result);
+                                    AsyncStorage.setItem('token', result);
                                     setCurrentUser(result);
                                     setIsLoading(false);
                                 }
