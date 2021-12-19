@@ -1,5 +1,6 @@
 import express from'express'
 import auth from'../middleware/auth.js'
+import isClient from'../middleware/isCLient.js'
 import {
   registerNewUser,
   loginUser,
@@ -7,7 +8,8 @@ import {
   getUsers,
   getProfile,
   updateUser,
-  deleteUser
+  deleteUser,
+  getClientDashboard
 } from'../controllers/user.js'
 
 const router = new express.Router()
@@ -32,9 +34,9 @@ router.put('/update', auth, updateUser)
 router.delete('/delete', auth, deleteUser)
 
 
-// // FOR CLIENTS 
-// //Get Client Dashboard
-// router.get('/client/dashboard', auth, getClientDashboard)
+// FOR CLIENTS 
+//Get Client Dashboard
+router.get('/client/dashboard', auth, isClient, getClientDashboard)
 
 
 // // FOR VENDORS 
@@ -43,8 +45,8 @@ router.delete('/delete', auth, deleteUser)
 
 
 
-// //Get All Users
-// router.get('/get', getUsers)
+//Get All Users
+router.get('/get', getUsers)
 
 
 export default router

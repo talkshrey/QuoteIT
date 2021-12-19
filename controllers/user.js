@@ -1,4 +1,5 @@
 import User from '../models/User.js';
+import Quotation from '../models/Quotation.js';
 
 //Register a user
 const registerNewUser = async (req, res) => {
@@ -136,20 +137,20 @@ const deleteUser = async (req, res) => {
 
 //Get Client Dashboard
 
-// const getClientDashboard = async (req, res) => {
-//   try {
-//     const quotations = await Quotation.findById({quotedTo: req.user.id})
-//     res.json({
-//       success: true,
-//       data: quotations,
-//     });
-//   } catch (e) {
-//     res.status(500).json({
-//       success: false,
-//       message: e.message,
-//     });
-//   }
-// }
+const getClientDashboard = async (req, res) => {
+  try {
+    const quotations = await Quotation.find({quotedToEmail: req.user.email})
+    res.json({
+      success: true,
+      data: quotations,
+    });
+  } catch (e) {
+    res.status(500).json({
+      success: false,
+      message: e.message,
+    });
+  }
+}
 
 export {
   registerNewUser,
@@ -159,4 +160,5 @@ export {
   getProfile,
   updateUser,
   deleteUser,
+  getClientDashboard
 };
