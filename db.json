@@ -174,5 +174,23 @@
       "id": "5",
       "subCatName": "Allen Solly"
     }
+  ],
+  "appliance_api": [
+    {
+      "id": "1",
+      "laptop": [
+        "model_a",
+        "model_b",
+        "model_c"
+      ]
+    },
+    {
+      "id": "2",
+      "fridge": [
+        "model_a",
+        "model_b",
+        "model_c"
+      ]
+    }
   ]
 }

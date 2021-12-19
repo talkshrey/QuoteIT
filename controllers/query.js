@@ -3,10 +3,9 @@ import User from '../models/User.js'
 
 import dotenv from 'dotenv'
 dotenv.config()
-// const client = require('twilio')();
+
 import Twilio from 'twilio'
-// client()
-var client = new Twilio();
+var client = new Twilio()
 
 //Create a new query
 const createQuery = async (req, res) => {
@@ -24,12 +23,14 @@ const createQuery = async (req, res) => {
     vendors.forEach((vendor) => {
       const number = vendor.contact
       const con = `whatsapp:+91${number}`
-      client.messages.create({
-        from: 'whatsapp:+14155238886',
-        body: `User X is looking for your product. visit: www.google.com for further details`,
-        to: con
-
-      }).then(message => console.log("message sent" + message.sid));
+    
+      client.messages
+        .create({
+          from: 'whatsapp:+14155238886',
+          body: `Hi, ${vendor.name}! There is a query for ${query.productModel}. Follow the link: https://memer-shrey.netlify.app/ for logging in!`,
+          to: con,
+        })
+        .then((message) => console.log('message sent' + message.sid))
     })
     console.log(contacts)
     res.status(201).json({
@@ -37,6 +38,7 @@ const createQuery = async (req, res) => {
       query,
     })
   } catch (e) {
+      console.log(e);
     res.status(400).json({
       success: false,
       message: e.message,

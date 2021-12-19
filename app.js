@@ -9,6 +9,7 @@ import morgan from'morgan'
 import userRouter from'./routes/user.js'
 import queryRouter from'./routes/query.js'
 import productRouter from'./routes/product.js'
+import quoationRouter from'./routes/quotation.js'
 
 import cors from 'cors'
 
@@ -25,6 +26,8 @@ app.use(express.json())
 app.use('/api/user', userRouter)
 app.use('/api/query', queryRouter)
 app.use('/api/product', productRouter)
+app.use('/api/quotation', quoationRouter)
+
 
 const server = app.listen(port, () => console.log(`server has started on port ${port}`))
 

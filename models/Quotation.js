@@ -1,10 +1,35 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose'
 
 const QuotationSchema = new mongoose.Schema({
-    quotedTo:{
-        type: mongoose.Schema.Types.ObjectId,
+    companyName:{
+        type: String,
+        required: [true, 'Please provide the name of your company' ]
+    },
+    vendorContact: {
+        type: Number,
+        required: [true, 'Please provide your contact']
+    },
+    vedorName: {
+        type: String,
+        required: [true, 'Please provide your contact']
+    },
+    rawPrice: {
+        type: Number,
+        required: [true, 'Please provide the raw price']
+    },
+    afterTaxPrice: {
+        type: Number,
+        required: [true, 'Please provide the price after taxing']
+    },
+    quotedToName:{
+        type: String,
         required: true,
         ref:'User'
+    },
+    quotedToEmail: {
+        type: String,
+        required: [true, 'Please enter the email of the client'],
+        ref: 'User'
     },
     quotedBy:{
         type: mongoose.Schema.Types.ObjectId,
@@ -12,18 +37,9 @@ const QuotationSchema = new mongoose.Schema({
         ref:'Vendor'
     },
     quoteOf: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true,
-        ref:'Query'
-    },
-    rawPrice: {
-        type: Number,
-        required: true
-    },
-    afterTaxPrice: {
-        type: Number,
-        required: true
+        type: String,
+        required: [true, 'Please provide the product model'],
     }
 },{timestamps:true});
 
-module.exports = mongoose.model('Quotation', QuotationSchema);
+export default mongoose.model('Quotation', QuotationSchema);
