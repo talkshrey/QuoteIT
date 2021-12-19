@@ -10,7 +10,8 @@ import Splash from '../screens/Splash'
 import Login from '../screens/Login';
 import Register from '../screens/Register';
 import ProductDetails from '../screens/ProductDetails';
-
+import ModelDetails from '../screens/ModelDetails';
+import Output from '../screens/Output'
 const Stack = createStackNavigator();
 
 const Navigator = () => {
@@ -42,7 +43,7 @@ const Navigator = () => {
                     alignItems: 'center',
                     // backgroundColor: bgColor,
                 }}>
-                <ActivityIndicator size="large"/>
+                <ActivityIndicator size="large" />
             </View>
         );
     }
@@ -53,12 +54,15 @@ const Navigator = () => {
                     <Stack.Screen name='TopTabNavigation' component={TopTabNavigation} options={{ headerShown: false }}></Stack.Screen>
                     <Stack.Screen name='AppliancesDetails' component={AppliancesDetails} options={{ headerShown: false }}></Stack.Screen>
                     <Stack.Screen name='ProductDetails' component={ProductDetails} options={{ headerShown: false }}></Stack.Screen>
+                    <Stack.Screen name='ModelDetails' component={ModelDetails} options={{ headerShown: false }}></Stack.Screen>
+                    <Stack.Screen name='Output' component={Output} options={{ headerShown: false }}></Stack.Screen>
                 </Stack.Navigator>
             ) :
-                <Stack.Navigator initialRouteName="Register">
+                <Stack.Navigator initialRouteName="Splash">
                     <Stack.Screen name='Login' component={Login} options={{ headerShown: false }}></Stack.Screen>
                     <Stack.Screen name='Register' component={Register} options={{ headerShown: false }}></Stack.Screen>
                     <Stack.Screen name='Splash' component={Splash} options={{ headerShown: false }}></Stack.Screen>
+                   
                 </Stack.Navigator>
             }
         </NavigationContainer>
