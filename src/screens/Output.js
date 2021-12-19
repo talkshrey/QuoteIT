@@ -11,7 +11,10 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 
-const Output = () => (
+function Output ({route}) {
+  var Category=route.params.m;
+  var SubCategory=route.params.s;
+  return(
   <View style={styles.container}>
     <LinearGradient
       colors={['#E32747', '#E3556D', '#E399A5']}
@@ -20,14 +23,15 @@ const Output = () => (
         <Text style={styles.display}>Username</Text>
         <Text style={styles.display}>Email Address</Text>
         <Text style={styles.display}>Contact Number</Text>
-        <Text style={styles.display}>Category</Text>
-        <Text style={styles.display}>Sub-Category</Text>
+        <Text style={styles.display}>{Category}</Text>
+        <Text style={styles.display}>{SubCategory}</Text>
         <Text style={styles.display}>Model Number</Text>
 
       </View>
     </LinearGradient>
   </View>
-);
+  );
+}
 
 export default Output;
 
