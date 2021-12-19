@@ -1,0 +1,25 @@
+{
+  "name": "quoteit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "craco.config.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/talkshrey/QuoteIT.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/talkshrey/QuoteIT/issues"
+  },
+  "homepage": "https://github.com/talkshrey/QuoteIT#readme",
+  "dependencies": {
+    "react-scripts": "^5.0.0"
+  }
+}
