@@ -10,6 +10,7 @@ const createQuotation = async (req, res) => {
     const quotation = new Quotation({
       ...req.body,
       quotedBy: req.user.id, //since logged in as vendor
+      companyName: req.user.companyName,
       vendorContact: req.user.contact,
       vendorName: req.user.name,
     })
