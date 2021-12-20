@@ -2,8 +2,11 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 export default function FinalVendor() {
+
+    var hist = useHistory()
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -39,6 +42,8 @@ export default function FinalVendor() {
             .then(response => response.text())
             .then(result => console.log(result))
             .catch(error => console.log('error', error));
+
+        hist.push('../')
     }
 
     const [color1, setColor1] = useState('')
@@ -49,27 +54,27 @@ export default function FinalVendor() {
     const [color6, setColor6] = useState('')
 
     function colorChange1() {
-        setColor1('#FECACA')
+        setColor1('#F5796D')
     }
 
     function colorChange2() {
-        setColor2('#FECACA')
+        setColor2('#F5796D')
     }
 
     function colorChange3() {
-        setColor3('#FECACA')
+        setColor3('#F5796D')
     }
 
     function colorChange4() {
-        setColor4('#FECACA')
+        setColor4('#F5796D')
     }
 
     function colorChange5() {
-        setColor5('#FECACA')
+        setColor5('#F5796D')
     }
 
     function colorChange6() {
-        setColor6('#FECACA')
+        setColor6('#F5796D')
     }
     return (
         <div className='flex flex-row'>
@@ -78,13 +83,13 @@ export default function FinalVendor() {
                     <Card sx={{ minWidth: 275, backgroundColor: color1 }}>
                         <CardContent>
                             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                                Username 1
+                                Shrey Parekh
                             </Typography>
                             <Typography variant="h5" component="div">
-                                User Contact 1
+                                UltraTech
                             </Typography>
                             <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                                Cement 1
+                                9833447698
                             </Typography>
                             <Typography variant="body2">
                                 <br />
@@ -98,13 +103,13 @@ export default function FinalVendor() {
                     <Card sx={{ minWidth: 275, backgroundColor: color3 }}>
                         <CardContent>
                             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                                Username 2
+                                Lokita Varma
                             </Typography>
                             <Typography variant="h5" component="div">
-                                User Contact 2
+                                UltraTech
                             </Typography>
                             <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                                Cement 2
+                                7045141518
                             </Typography>
                             <Typography variant="body2">
                                 <br />
@@ -118,13 +123,13 @@ export default function FinalVendor() {
                     <Card sx={{ minWidth: 275, backgroundColor: color5 }}>
                         <CardContent>
                             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                                Username 3
+                                Yash Shah
                             </Typography>
                             <Typography variant="h5" component="div">
-                                User Contact 3
+                                ACC Cement
                             </Typography>
                             <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                                Cement 1
+                                9326549053
                             </Typography>
                             <Typography variant="body2">
                                 <br />
@@ -138,13 +143,13 @@ export default function FinalVendor() {
                     <Card sx={{ minWidth: 275, backgroundColor: color2 }}>
                         <CardContent>
                             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                                Username 4
+                                Priyambi Hiran
                             </Typography>
                             <Typography variant="h5" component="div">
-                                User Contact 4
+                                ACC Cement
                             </Typography>
                             <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                                Cement 2
+                                887925321
                             </Typography>
                             <Typography variant="body2">
                                 <br />
@@ -158,13 +163,13 @@ export default function FinalVendor() {
                     <Card sx={{ minWidth: 275, backgroundColor: color4 }}>
                         <CardContent>
                             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                                Username 5
+                                Ankit Gupta
                             </Typography>
                             <Typography variant="h5" component="div">
-                                User Contact 5
+                                ACC Cement
                             </Typography>
                             <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                                Cement 3
+                                9834539485
                             </Typography>
                             <Typography variant="body2">
                                 <br />
@@ -178,13 +183,13 @@ export default function FinalVendor() {
                     <Card sx={{ minWidth: 275, backgroundColor: color6 }}>
                         <CardContent>
                             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                                Username 6
+                                Manav Kamdar
                             </Typography>
                             <Typography variant="h5" component="div">
-                                User Contact 6
+                                Ambuja Cement
                             </Typography>
                             <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                                Cement 2
+                                9823349852
                             </Typography>
                             <Typography variant="body2">
                                 <br />
@@ -196,46 +201,44 @@ export default function FinalVendor() {
                 </div>
 
             </div>
-            <div className='bg-white p-10'>
-                <form onSubmit={handleSubmit} className='flex flex-col justify-around p-5 h-max w-max'>
-                    <div className='p-5'>
-                        <label>
-                            Client Name
-                        </label>
-                        <br/>
-                        <input onChange={e => setName(e.target.value)} placeholder='Name' />
-                    </div>
-                    <div className='p-5'>
-                        <label>
-                            Client Email
-                        </label>
-                        <br/>
-                        <input onChange={e => setEmail(e.target.value)} placeholder='Email' />
-                    </div>
-                    <div className='p-5'>
-                        <label>
-                            Model
-                        </label>
-                        <br/>
-                        <input onChange={e => setModel(e.target.value)} placeholder='Model' />
-                    </div>
-                    <div className='p-5'>
-                        <label>
-                            Raw Price
-                        </label>
-                        <br/>
-                        <input onChange={e => setPrice(e.target.value)} placeholder='Price' />
-                    </div>
-                    <div className='p-5'>
-                        <label>
-                            Price after tax
-                        </label>
-                        <br/>
-                        <input onChange={e => setTax(e.target.value)} placeholder='Tax' />
-                    </div>
-                    <button type='submit'> Submit </button>
-                </form>
-            </div>
+            <form onSubmit={handleSubmit} style={{backgroundColor:'#F5796D', marginTop:'42px', width:'550px', height:'620px'}} className='flex flex-col rounded-md justify-around p-5 items-center'>
+                <div className='p-5 flex flex-row'>
+                    <label className='p-2'>
+                        Client Name
+                    </label>
+                    <br/>
+                    <input className='p-2 ml-10 border-2 border-black rounded-md' onChange={e => setName(e.target.value)} placeholder='Name' />
+                </div>
+                <div className='p-5 flex flex-row'>
+                    <label className='p-2'>
+                        Client Email
+                    </label>
+                    <br/>
+                    <input className='p-2 ml-10 border-2 border-black rounded-md' onChange={e => setEmail(e.target.value)} placeholder='Email' />
+                </div>
+                <div className='p-5 flex flex-row'>
+                    <label className='p-2'>
+                        Model
+                    </label>
+                    <br/>
+                    <input className='p-2 ml-20 border-2 border-black rounded-md' onChange={e => setModel(e.target.value)} placeholder='Model' />
+                </div>
+                <div className='p-5 flex flex-row'>
+                    <label className='p-2'>
+                        Raw Price
+                    </label>
+                    <br/>
+                    <input className='p-2 ml-16 border-2 border-black rounded-md' onChange={e => setPrice(e.target.value)} placeholder='Price' />
+                </div>
+                <div className='p-5 flex flex-row'>
+                    <label className='p-2'>
+                        Price after tax
+                    </label>
+                    <br/>
+                    <input className='p-2 ml-10 border-2 border-black rounded-md' onChange={e => setTax(e.target.value)} placeholder='Tax' />
+                </div>
+                <button type='submit' style={{backgroundColor:'#1A1B2F'}} className="rounded-md px-8 text-lg text-white py-2 w-max font-sans"> Submit </button>
+            </form>
         </div>
     )
 }
