@@ -3,8 +3,11 @@ import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import login from "../Assets/Images/login.png"
 import { TextField } from "@mui/material";
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
+import { useHistory } from "react-router-dom";
 
 export default function LoginForm() {
+
+    var hist = useHistory()
 
     const [name, setName] = useState('')
     const [pass, setPass] = useState('')
@@ -36,6 +39,8 @@ export default function LoginForm() {
             console.log(result)
         })
         .catch(error => console.log('error', error));
+
+        hist.push('/vendor')
     }
 
     localStorage.setItem('token', tok)

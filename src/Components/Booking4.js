@@ -10,8 +10,9 @@ import Header2 from './Header2';
 import plates from '../Assets/Images/plates.png'
 import wires from '../Assets/Images/wires.png'
 import wood from '../Assets/Images/wood.png'
-import raw from '../Assets/Images/rawmaterials.png'
+import raw from '../Assets/Images/raw.jpeg'
 import CloseIcon from '@mui/icons-material/Close';
+// import cloth from '../Assets/Images/cloth.png'
 
 const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
@@ -162,7 +163,7 @@ export default function Booking4() {
                                 {data[4].subCatName}
                                     <div className="flex flex-row items-center justify-around">
                                         <img src={wood} alt="laptop" className="w-32" />
-                                        <button type="button" id="but" className="px-5 py-3 bg-white rounded-md" onClick={() => setOpen4(o => !o)}> {data[3].subCatName} </button>
+                                        <button type="button" id="but" className="px-5 py-3 bg-white rounded-md" onClick={() => setOpen4(o => !o)}> {data[4].subCatName} </button>
                                         <Popup open={open4} closeOnDocumentClick onClose={closeModal4} position="right top">
                                             <div className="w-max h-max bg-gradient-to-r from-white to-blue-500 rounded-md p-5">
                                                 <CloseIcon onClick={closeModal4}/>

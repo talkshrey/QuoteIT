@@ -1,6 +1,10 @@
+import { useHistory } from "react-router-dom"
+
 export default function Query() {
 
-    var key = localStorage.getItem('token')
+    var hist = useHistory()
+
+    var key = localStorage.getItem('tok')
     var model_name = sessionStorage.getItem('model')
     var sub_cat = sessionStorage.getItem('sub')
     var cat = sessionStorage.getItem('cat')
@@ -28,6 +32,8 @@ export default function Query() {
         .then(response => response.json())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
+
+        hist.push('../')
     }
 
     console.log(key)

@@ -7,10 +7,11 @@ import Typography from '@mui/material/Typography';
 export default function FinalUserDashBoard() {
 
     var key = localStorage.getItem('token')
+    var key2 = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWJlM2IyYmRjMjg0NzE3OTJkNGU3OWMiLCJpYXQiOjE2Mzk4NjcwNDcsImV4cCI6MTY3MTQwMzA0N30.gAYUoakAHMKKltkWlVYikGrcReNmeSAC8U7TRUTmkhg'
     const [quote, setQuote] = useState([{ 0: 'hello' }, { 1: 'world' }])
 
     var myHeaders = new Headers();
-    myHeaders.append("Authorization", `Bearer ${key}`);
+    myHeaders.append("Authorization", `Bearer ${key2}`);
 
     var requestOptions = {
         method: 'GET',
@@ -31,28 +32,27 @@ export default function FinalUserDashBoard() {
 
 
     return (
-        <div>
+        <div className="text-center">
             <Header2 />
             <div className="text-white"> Dash Board </div>
-            <div className="grid grid-rows-3 grid-flow-col gap-5 hover:scale-125">
+            <div className="grid grid-rows-3 grid-flow-col ml-24 mt-8 gap-5 hover:scale-125">
             {quote.map((items)=> 
-                <Card sx={{ maxWidth: 275 }}>
+                <Card sx={{ maxWidth: 275 }} style={{backgroundImage: 'linear-gradient(to right, #F5796D, #FECACA)'}}>
                     <CardContent>
-                        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                            {items.companyName}
+                        <Typography sx={{ fontSize: 14 }} component="div">
+                           Quoted Price:  {items.rawPrice}
                         </Typography>
-                        <Typography variant="h5" component="div">
-                            {items.quoteOf}
+                        <Typography sx={{ fontSize: 14 }} component="div">
+                           Price after tax: {items.afterTaxPrice}
                         </Typography>
-                        <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                            {items.quotedToEmail}
+                        <Typography sx={{ fontSize: 14 }} component="div">
+                           Company Name: {items.companyName}
+                        </Typography>
+                        <Typography sx={{ fontSize: 14 }} component="div">
+                           Vendor Name: {items.quoteOf}
                         </Typography>
                         <Typography variant="body2">
-                            {items.quotedToName}
-                            <br />
-                        </Typography>
-                        <Typography variant="body2">
-                            {items.vendorContact}
+                          Vendor Contact:  {items.vendorContact}
                             <br />
                         </Typography>
                     </CardContent>

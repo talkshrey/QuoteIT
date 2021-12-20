@@ -19,7 +19,7 @@ export default function RegisterForm() {
     const [conPass, setConfPass] = useState('')
     const [cont, setCont] = useState(9833447698)
     const [email, setEmail] = useState('')
-    const [token, setToken] = useState('')    
+    // const [token, setToken] = useState('')    
     const [role, setRole] = useState('')
     const [loc, setLoc] = useState('')
 
@@ -54,13 +54,12 @@ export default function RegisterForm() {
         fetch("http://localhost:3001/api/user/register/", requestOptions)
             .then(response => response.text())
             .then(result => {
-                setToken(result)
+                // setToken(result)
                 console.log(result)
+                localStorage.setItem('tok', result)
             }
             )
             .catch(error => console.log('hey', error));
-        
-        localStorage.setItem('tok', token)
 
         if(role==='vendor') {
             hist.push('/vendor')
