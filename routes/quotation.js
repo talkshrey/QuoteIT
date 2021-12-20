@@ -1,6 +1,6 @@
 import express from'express'
 import auth from'../middleware/auth.js'
-//import isClient from '../middleware/isClient.js'
+import isVendor from '../middleware/isVendor.js'
 import {
   createQuotation
 } from'../controllers/quotation.js'
@@ -8,6 +8,6 @@ import {
 const router = new express.Router()
 
 //Create a new query
-router.post('/new', auth, createQuotation)
+router.post('/new', auth, isVendor, createQuotation)
 
 export default router

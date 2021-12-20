@@ -11,10 +11,6 @@ const QuerySchema = new mongoose.Schema({
         required: true,
         // ref:'Vendor' 
     },
-    productName: {
-        type: String,
-        required: [true, 'Please add a name']
-    },
     productCategory:{
         type: String,
         required:[true, 'Please enter Category']

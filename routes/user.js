@@ -11,7 +11,7 @@ import {
   updateUser,
   deleteUser,
   getClientDashboard,
-  //getVendorDashboard
+  getVendorDashboard
 } from'../controllers/user.js'
 
 const router = new express.Router()
@@ -43,7 +43,7 @@ router.get('/client/dashboard', auth, isClient, getClientDashboard)
 
 // FOR VENDORS 
 //Get Vendor Dashboard
-//router.get('/vendor/dashboard', auth, isVendor, getVendorDashboard)
+router.get('/vendor/dashboard', auth, isVendor, getVendorDashboard)
 
 
 
