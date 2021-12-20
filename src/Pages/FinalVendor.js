@@ -4,7 +4,7 @@ export default function FinalVendor() {
     return (
         <div>
             <Header/>
-            <p className="text-white"> Vendor Dashboard </p> 
+            <p className="text-white"> Vendor Dashboard </p>
         </div>
     )
 }

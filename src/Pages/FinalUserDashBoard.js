@@ -6,47 +6,58 @@ import Typography from '@mui/material/Typography';
 
 export default function FinalUserDashBoard() {
 
-    const [quote, setQuote] = useState({ 1: 'hello' })
+    var key = localStorage.getItem('token')
+    const [quote, setQuote] = useState([{ 0: 'hello' }, { 1: 'world' }])
 
     var myHeaders = new Headers();
-    myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWJlM2IyYmRjMjg0NzE3OTJkNGU3OWMiLCJpYXQiOjE2Mzk4NjcwNDcsImV4cCI6MTY3MTQwMzA0N30.gAYUoakAHMKKltkWlVYikGrcReNmeSAC8U7TRUTmkhg");
+    myHeaders.append("Authorization", `Bearer ${key}`);
 
     var requestOptions = {
-    method: 'GET',
-    headers: myHeaders,
-    redirect: 'follow'
+        method: 'GET',
+        headers: myHeaders,
+        redirect: 'follow'
     };
 
-    useEffect(()=> {
+    useEffect(() => {
         fetch("http://localhost:3001/api/user/client/dashboard", requestOptions)
-        .then(response => response.json())
-        .then(result => console.log(result))
-        .catch(error => console.log('error', error));
-    })
+            .then(response => response.json())
+            .then(result => {
+                setQuote(result.data)
+                console.log(result.data)
+            })
+            .catch(error => console.log('error', error));
+    }, [])
+
+
 
     return (
         <div>
             <Header2 />
-            <p className="text-white"> Dash Board </p>
-            <div className="">
+            <div className="text-white"> Dash Board </div>
+            <div className="grid grid-rows-3 grid-flow-col gap-5 hover:scale-125">
+            {quote.map((items)=> 
                 <Card sx={{ maxWidth: 275 }}>
                     <CardContent>
                         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                            Word of the Day
+                            {items.companyName}
                         </Typography>
                         <Typography variant="h5" component="div">
-                            benevolent
+                            {items.quoteOf}
                         </Typography>
                         <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                            adjective
+                            {items.quotedToEmail}
                         </Typography>
                         <Typography variant="body2">
-                            well meaning and kindly.
+                            {items.quotedToName}
                             <br />
-                            {'"a benevolent smile"'}
+                        </Typography>
+                        <Typography variant="body2">
+                            {items.vendorContact}
+                            <br />
                         </Typography>
                     </CardContent>
                 </Card>
+                )}
             </div>
         </div>
     )

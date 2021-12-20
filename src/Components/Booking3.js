@@ -26,7 +26,7 @@ export default function Booking3(props) {
       };
     
     useEffect(()=>{
-        fetch("http://localhost:5000/category-web", requestOptions)
+        fetch("https://glacial-harbor-01488.herokuapp.com/category-web", requestOptions)
         .then(response => response.json())
         .then(result => {
             console.log(result[0]["category-name"])
@@ -35,7 +35,7 @@ export default function Booking3(props) {
     }, [])
 
     useEffect(()=>{
-        fetch("http://localhost:5000/sub-category-fashion", requestOptions)
+        fetch("https://glacial-harbor-01488.herokuapp.com/sub-category-fashion", requestOptions)
         .then(response => response.json())
         .then(result => {
             setData(result)
