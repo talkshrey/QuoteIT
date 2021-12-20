@@ -77,43 +77,43 @@ export default function RegisterForm() {
     return (
         
         <div className="w-max h-max flex flex-row align-center">
-            <form className="flex flex-col px-20 py-4 bg-white rounded-md mt-20" style={{marginLeft:'400px'}} onSubmit={handleSubmit}>
+            <form className="flex flex-col px-20 py-4 rounded-md mt-20" style={{marginLeft:'400px', backgroundColor:'#F5796D'}} onSubmit={handleSubmit}>
                 <div className="text-center font-sans font-bold pt-3 text-black text-xl"> Register page  </div>
                 <div className="grid grid-rows-4 grid-flow-col">
                     <div className="p-5">
                         <br/>
                         <div className="flex flex-row justify-around items-center">
-                            <PersonOutlineOutlinedIcon sx={{color: '#E33E5A', padding:'5px'}} fontSize="large"/>
-                            <TextField label="Username" sx={{width:'250px'}} onChange={e=>setName(e.target.value)}/>
+                            <PersonOutlineOutlinedIcon sx={{color: '#1b3358', padding:'5px'}} fontSize="large"/>
+                            <TextField label="Username" sx={{width:'250px', backgroundColor:'white'}} onChange={e=>setName(e.target.value)}/>
                         </div>
                     </div>
                     <div className="p-5">
                         <br/>
                         <div className="flex flex-row justify-around items-center">
-                            <VisibilityOutlinedIcon sx={{color: '#E33E5A', padding:'5px'}} fontSize="large"/>
-                            <TextField label="Password" sx={{width:'250px'}} onChange={e=>setPass(e.target.value)}/>
+                            <VisibilityOutlinedIcon sx={{color: '#1b3358', padding:'5px'}} fontSize="large"/>
+                            <TextField label="Password" type="password" sx={{width:'250px', backgroundColor:'white'}} onChange={e=>setPass(e.target.value)}/>
                         </div>
                     </div>
                     <div className="p-5">
                         <br/>
                         <div className="flex flex-row justify-around items-center">
-                            <LocalPhoneOutlinedIcon sx={{color: '#E33E5A', padding:'5px'}} fontSize="large"/>
-                            <TextField label="Contact" sx={{width:'250px'}} onChange={e=>setCont(e.target.value)}/>
+                            <LocalPhoneOutlinedIcon sx={{color: '#1b3358', padding:'5px'}} fontSize="large"/>
+                            <TextField label="Contact" sx={{width:'250px', backgroundColor:'white'}} onChange={e=>setCont(e.target.value)}/>
                         </div>
                     </div>
                     <div className="p-5">
                         <br/>
                         <div className="flex flex-row justify-around items-center">
-                            <MailOutlineIcon sx={{color: '#E33E5A', padding:'5px'}} fontSize="large"/>
-                            <TextField label="Email" sx={{width:'250px'}} onChange={e=>setEmail(e.target.value)}/>
+                            <MailOutlineIcon sx={{color: '#1b3358', padding:'5px'}} fontSize="large"/>
+                            <TextField label="Email" sx={{width:'250px', backgroundColor:'white'}} onChange={e=>setEmail(e.target.value)}/>
                         </div>
                     </div>
                     <div className="p-5">
                         <br/>
                         <div className="flex flex-row justify-around items-center">
-                            <PersonAddAlt1OutlinedIcon sx={{color: '#E33E5A', padding:'5px'}} fontSize="large"/>
+                            <PersonAddAlt1OutlinedIcon sx={{color: '#1b3358', padding:'5px'}} fontSize="large"/>
                             {/* <TextField label="Role" sx={{width:'250px'}} onChange={e=>setRole(e.target.value)}/> */}
-                            <FormControl fullWidth>
+                            <FormControl sx={{backgroundColor:'white'}} fullWidth>
                                 <InputLabel id="demo-simple-select-label">Role</InputLabel>
                                     <Select
                                     labelId="demo-simple-select-label"
@@ -131,19 +131,19 @@ export default function RegisterForm() {
                     <div className="p-5">
                         <br/>
                         <div className="flex flex-row justify-around items-center">
-                            <VisibilityOutlinedIcon sx={{color: '#E33E5A', padding:'5px'}} fontSize="large"/>
-                            <TextField label="Confirm Password" sx={{width:'250px'}} onChange={e=>setConfPass(e.target.value)}/>
+                            <VisibilityOutlinedIcon sx={{color: '#1b3358', padding:'5px'}} fontSize="large"/>
+                            <TextField label="Confirm Password" type="password" sx={{width:'250px', backgroundColor:'white'}} onChange={e=>setConfPass(e.target.value)}/>
                         </div>
                     </div>     
                     <div className="p-5">
                         <br/>
                         <div className="flex flex-row justify-around items-center">
-                            <LocationOnOutlinedIcon sx={{color: '#E33E5A', padding:'5px'}} fontSize="large"/>
-                            <TextField label="Location" sx={{width:'250px', border:'#E33E5A'}} onChange={e=>setLoc(e.target.value)}/>
+                            <LocationOnOutlinedIcon sx={{color: '#1b3358', padding:'5px'}} fontSize="large"/>
+                            <TextField label="Location" sx={{width:'250px', border:'#E33E5A', backgroundColor:'white'}} onChange={e=>setLoc(e.target.value)}/>
                         </div>
                     </div>
                 </div>
-            <button type="submit" className="rounded-md px-4 py-1 my-3 bg-red-200 w-max hover:bg-red-500"> Submit </button>
+                <button type="submit" style={{backgroundColor:'#1A1B2F'}} className="rounded-md text-lg text-white py-2 font-sans"> Submit </button>
             </form>
         </div>
     )

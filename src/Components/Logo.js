@@ -5,12 +5,13 @@ import Lottie from 'react-lottie'
 export default function Logo() {
 
         const defaultOptions = {
-            loop: true,
+            loop: false,
             autoplay: true,
             animationData: animationData,
             rendererSettings: {
               preserveAspectRatio: "xMidYMid slice"
             }
+        
           }
         
         return (

@@ -7,7 +7,6 @@ import Popup from "reactjs-popup";
 import { useState, useEffect } from "react";
 import laptop from "../Assets/Images/laptop.png"
 import Header2 from './Header2';
-import Pops from './Pops';
 
 const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
@@ -34,6 +33,7 @@ export default function Booking2(props) {
             console.log(result[0]["category-name"])
         })
         .catch(error => console.log('error', error))
+        // eslint-disable-next-line
     }, [])
 
     useEffect(()=>{
@@ -43,6 +43,7 @@ export default function Booking2(props) {
             setData(result)
         })
         .catch(error => console.log('error', error))
+        // eslint-disable-next-line
     }, [])
 
     useEffect(()=>{
@@ -54,6 +55,7 @@ export default function Booking2(props) {
             console.log(Object.values(result.data).map(item=>item))
           })
           .catch(error => console.log('error', error));
+          // eslint-disable-next-line
   }, [])
 
     return (
@@ -87,7 +89,6 @@ export default function Booking2(props) {
                             <div className="flex flex-row items-center justify-around">
                                 <img src={laptop} alt="laptop" className="w-32"/>
                                 <button type="button" className="px-5 py-3 bg-red-200 rounded-md" onClick={() => setOpen(o => !o)}> {data[1].subCatName} </button>
-                                <Pops o={open} c={closeModal} model="fridge"/>
                             </div>
                         </Item>
                     </Grid>

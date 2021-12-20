@@ -1,9 +1,7 @@
-import { Link } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-import Pops from './Pops';
 import { useState, useEffect } from "react";
 import laptop from "../Assets/Images/laptop.png"
 import Header2 from './Header2';
@@ -32,6 +30,7 @@ export default function Booking3(props) {
             console.log(result[0]["category-name"])
         })
         .catch(error => console.log('error', error))
+        // eslint-disable-next-line
     }, [])
 
     useEffect(()=>{
@@ -42,6 +41,7 @@ export default function Booking3(props) {
 
         })
         .catch(error => console.log('error', error))
+        // eslint-disable-next-line
     }, [])
 
 
@@ -57,7 +57,6 @@ export default function Booking3(props) {
                         <div className="flex flex-row items-center justify-around">
                             <img src={laptop} alt="laptop" className="w-32"/>
                             <button type="button" className="px-5 py-3 bg-red-200 rounded-md" onClick={() => setOpen(o => !o)}> {data[0].subCatName} </button>
-                            <Pops o={open} c={closeModal}/>
                         </div>
                     </Item>
                     <br/>

@@ -95,7 +95,7 @@ export default function FinalVendor() {
                 </div>
 
                 <div>
-                    <Card sx={{ minWidth: 275, backgroundColor: color2 }}>
+                    <Card sx={{ minWidth: 275, backgroundColor: color3 }}>
                         <CardContent>
                             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                                 Username 2
@@ -109,13 +109,13 @@ export default function FinalVendor() {
                             <Typography variant="body2">
                                 <br />
                             </Typography>
-                            <button onClick={colorChange2} className='py-2 px-5 border-2 border-black rounded-md'> Post Quotation </button>
+                            <button onClick={colorChange3} className='py-2 px-5 border-2 border-black rounded-md'> Post Quotation </button>
                         </CardContent>
                     </Card>
                 </div>
 
                 <div>
-                    <Card sx={{ minWidth: 275, backgroundColor: color2 }}>
+                    <Card sx={{ minWidth: 275, backgroundColor: color5 }}>
                         <CardContent>
                             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                                 Username 3
@@ -129,7 +129,7 @@ export default function FinalVendor() {
                             <Typography variant="body2">
                                 <br />
                             </Typography>
-                            <button onClick={colorChange3} className='py-2 px-5 border-2 border-black rounded-md'> Post Quotation </button>
+                            <button onClick={colorChange5} className='py-2 px-5 border-2 border-black rounded-md'> Post Quotation </button>
                         </CardContent>
                     </Card>
                 </div>
@@ -169,13 +169,13 @@ export default function FinalVendor() {
                             <Typography variant="body2">
                                 <br />
                             </Typography>
-                            <button onClick={colorChange5} className='py-2 px-5 border-2 border-black rounded-md'> Post Quotation </button>
+                            <button onClick={colorChange4} className='py-2 px-5 border-2 border-black rounded-md'> Post Quotation </button>
                         </CardContent>
                     </Card>
                 </div>
 
                 <div>
-                    <Card sx={{ minWidth: 275, backgroundColor: color5 }}>
+                    <Card sx={{ minWidth: 275, backgroundColor: color6 }}>
                         <CardContent>
                             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                                 Username 6

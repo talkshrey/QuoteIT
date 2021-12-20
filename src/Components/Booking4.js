@@ -47,6 +47,7 @@ export default function Booking4() {
                 console.log(result[0]["category-name"])
             })
             .catch(error => console.log('error', error))
+            // eslint-disable-next-line
     }, [])
 
     useEffect(() => {
@@ -56,6 +57,7 @@ export default function Booking4() {
                 setData(result)
             })
             .catch(error => console.log('error', error))
+            // eslint-disable-next-line
     }, [])
 
     async function buy(e) {

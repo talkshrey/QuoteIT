@@ -1,9 +1,9 @@
 import { useState } from "react";
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
-import login from "../Assets/Images/login.png"
 import { TextField } from "@mui/material";
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 import { useHistory } from "react-router-dom";
+import login from '../Assets/Images/login.png'
 
 export default function LoginForm() {
 
@@ -47,26 +47,30 @@ export default function LoginForm() {
 
     return (
 
-        <div className="w-screen h-max flex flex-row align-center">            
-            <div className="p-8"> <img src={login} alt="login"/> </div>
-            <form className="flex flex-col px-20 pt-20 bg-gray-100 rounded-md" style={{backgroundColor: '#FECACA'}} onSubmit={handleSubmit}>
-                <div className="text-center pt-5 text-black text-xl"> <p className="font-sans font-bold"> Welcome Back </p> </div>
+        <div className="w-screen h-max flex flex-row justify-center align-center">            
+            <div className="flex flex-row mt-20">
+                <div className="p-8 w-96 h-96 rounded-l-md bg-white">
+                    <img src={login} alt="login"/>
+                </div>
+            <form className="flex flex-col px-20 py-20 rounded-r-md" style={{backgroundColor: '#F5796D'}} onSubmit={handleSubmit}>
+                <div className="text-center pt-3 text-2xl"> <p className="font-sans font-bold" style={{color:'#1A1B2F'}}> Welcome Back </p> </div>
                 <div className="p-5">
                     <br/>
                     <div className="flex flex-row justify-around items-center">
-                        <MailOutlineIcon sx={{color: '#1b3358'}} fontSize="large"/>
-                        <TextField label="Email" sx={{width:'250px', backgroundColor:'white'}} onChange={e=>setName(e.target.value)}/>
+                        <MailOutlineIcon sx={{color: '#1b3358', padding:'5px', marginRight:'10px'}} fontSize="large"/>
+                        <TextField label="Email" className="rounded-md" sx={{width:'250px', backgroundColor:'white'}} onChange={e=>setName(e.target.value)}/>
                     </div>
                 </div>
                 <div className="p-5">
                     <br/>
                     <div className="flex flex-row justify-around items-center">
-                        <VisibilityOutlinedIcon sx={{color: '#1b3358'}} fontSize="large"/>
-                        <TextField label="Password" sx={{width:'250px', backgroundColor:'white'}} id="password" onChange={e=>setPass(e.target.value)}/>
+                        <VisibilityOutlinedIcon sx={{color: '#1b3358', padding:'5px', marginRight:'10px'}} fontSize="large"/>
+                        <TextField label="Password" type="password" className="rounded-md" sx={{width:'250px', backgroundColor:'white'}} id="password" onChange={e=>setPass(e.target.value)}/>
                     </div> 
                 </div>
-                <center> <button type="submit"  className="rounded-md px-8 text-lg py-2 w-max font-sans"> Submit </button> </center>
+                <center> <button type="submit" style={{backgroundColor:'#1A1B2F'}} className="rounded-md px-8 text-lg text-white py-2 w-max font-sans"> Submit </button> </center>
             </form>
+            </div>        
         </div>
     )
 }
