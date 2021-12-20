@@ -3,7 +3,7 @@ import mongoose from 'mongoose'
 const QuotationSchema = new mongoose.Schema({
     companyName:{
         type: String,
-        required: [true, 'Please provide the name of your company' ]
+        //required: [true, 'Please provide the name of your company' ]
     },
     vendorContact: {
         type: Number,
