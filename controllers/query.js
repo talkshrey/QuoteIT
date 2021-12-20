@@ -27,7 +27,7 @@ const createQuery = async (req, res) => {
       client.messages
         .create({
           from: 'whatsapp:+14155238886',
-          body: `Hi, ${vendor.name}! There is a query for ${query.productModel}. Follow the link: https://memer-shrey.netlify.app/ for logging in!`,
+          body: `Hi, ${vendor.name}! There is a query for ${query.productModel}. Follow the link: https://drive.google.com/drive/folders/1Yr7yGpy0Uapnky52uO83qdwORnbDgp82?usp=sharing for logging in!`,
           to: con,
         })
         .then((message) => console.log('message sent' + message.sid))
