@@ -33,7 +33,7 @@ const sendNotification = (email, quoteOf) => transporter.sendMail({
     subject: "A vendor replied to your query!",
     text: `A vendor has replied to your query of ${quoteOf}.
     
-    Login yo your dashboard to get the best prices.
+    Login to your dashboard to get the best prices.
     
     Regards, QuoteIT.`
   }, (err, info) => {
