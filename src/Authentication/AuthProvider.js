@@ -69,17 +69,17 @@ export const AuthProvider = ({ children }) => {
                     }
                 },
 
-                signUp: async(email,password) => { 
+                signUp: async(name,email,password,contact, location, role) => { 
                     var myHeaders = new Headers();
                     myHeaders.append("Content-Type", "application/json");
                 
                     var raw = JSON.stringify({
-                      "name": "Yash",
+                      "name": name,
                       "email": email,
                       "password": password,
-                      "contact": 9326549053,
-                      "location":"Mumbai",
-                      "role":"client"
+                      "contact": contact,
+                      "location":location,
+                      "role":role
                     });
                 
                     var requestOptions = {
