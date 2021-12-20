@@ -1,4 +1,4 @@
-import React, { useState , useContext} from 'react';
+import React, { useState, useContext } from 'react';
 import {
   View,
   StyleSheet,
@@ -15,15 +15,18 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import { kCardColor1 } from '../constants/colors';
+import { kCardColor1, klightgreyColor } from '../constants/colors';
 import { AuthContext } from '../Authentication/AuthProvider';
 
 
-function Login() {
+function Login({ navigation }) {
   const [token, setToken] = useState(null);
   const [email, setemail] = useState('');
   const [password, setpassword] = useState('');
-  const {signIn, currentUser} = useContext(AuthContext);
+  const { signIn, currentUser } = useContext(AuthContext);
+  const [check, setcheck] = useState(false);
+  const [visible, setVisible] = useState(false);
+
 
   // const signIn = async (email, password) => {
   //   var myHeaders = new Headers();
@@ -68,44 +71,78 @@ function Login() {
 
         <Text style={styles.label}>WELCOME BACK!</Text>
         <Text style={styles.desc}>Login to your account</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Email"
-          keyboardType="email-address"
-          autoCompleteType="email"
-          autoCapitalize="none"
-          value={email}
-          onChangeText={text => setemail(text)}></TextInput>
-        <TextInput
-          style={styles.input}
-          placeholder="Password"
-          keyboardType="visible-password"
-          autoCompleteType="password"
-          autoCapitalize="none"
-          value={password}
-          onChangeText={text => setpassword(text)}></TextInput>
-        <View>
-          <View style={styles.container2}>
-            <View style={{ flex: 1, flexDirection: 'row' }}>
-              <Text style={{ color: 'black', marginLeft: 5 }}>Remember me</Text>
-            </View>
-            <View>
-              <TouchableOpacity>
-                <Text style={{ color: 'black', fontWeight: '700' }}>
-                  Forgot Password?
-                </Text>
-              </TouchableOpacity>
-            </View>
+        <View style={{ ...styles.inputContainer, marginTop: 40 }}>
+          <Ionicons name={"mail"} size={22} color={kCardColor1} style={{ paddingLeft: 10 }} />
+          <TextInput
+            style={styles.textInput}
+            placeholder="Email"
+            placeholderTextColor={kCardColor1}
+            keyboardType="email-address"
+            autoCompleteType="email"
+            autoCapitalize="none"
+            value={email}
+            onChangeText={text => setemail(text)}
+          />
+        </View>
+        <View style={{ ...styles.inputContainer, marginTop: 20 }}>
+          <TouchableOpacity style={{ paddingLeft: 10 }} activeOpacity={0.5} onPress={() => {
+            setVisible(!visible);
+          }}>
+            <Ionicons name={visible ? "lock-open" : "lock-closed"} size={20} color={kCardColor1} />
+          </TouchableOpacity>
+          <TextInput
+            style={styles.textInput}
+            placeholderTextColor={kCardColor1}
+            secureTextEntry={!visible}
+            placeholder="Password"
+            autoCompleteType="password"
+            autoCapitalize="none"
+            value={password}
+            onChangeText={text => setpassword(text)}
+          />
+        </View>
+
+        <View style={styles.container2}>
+          <View style={{ flex: 1, flexDirection: 'row' }}>
+            <TouchableOpacity onPress={() => {
+              setcheck(!check);
+            }}>
+              <Ionicons name={"checkmark-circle"} size={20} color="#393E46"
+                style={check ? { color: kCardColor1 } : { color: klightgreyColor }} />
+            </TouchableOpacity>
+            <Text style={{ color: kCardColor1, marginLeft: 5, fontWeight: '700' }}>Remember me</Text>
+          </View>
+          <View>
+            <TouchableOpacity>
+              <Text style={{ color: 'black', fontWeight: '700', textDecorationLine: 'underline' }}>
+                Forgot Password?
+              </Text>
+            </TouchableOpacity>
           </View>
         </View>
-        <Button
+
+        <View style={{ ...styles.button, backgroundColor: kCardColor1 }}>
+          <TouchableOpacity style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}
+            onPress={() => {
+              AsyncStorage.clear();
+              AsyncStorage.setItem('email', email);
+              AsyncStorage.setItem('password', password);
+              signIn(email, password);
+            }}>
+            <Text style={{ fontSize: 22, color: 'white', fontWeight: '600' }}>
+              LOGIN
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <View style={{ flexDirection: 'row', marginTop: 20 }}>
+          <Text style={{ color: klightgreyColor, fontSize: 16 }}>Don't have an account? </Text>
+          <TouchableOpacity onPress={() => { navigation.navigate('Register') }}>
+            <Text style={{ color: kCardColor1, fontWeight: 'bold', textDecorationLine: 'underline', fontSize: 16 }}>Sign up</Text>
+          </TouchableOpacity>
+        </View>
+        {/* <Button
           title="Login"
-          onPress={() => {
-            AsyncStorage.clear();
-            AsyncStorage.setItem('email', email);
-            AsyncStorage.setItem('password', password);
-            signIn(email, password);
-          }}></Button>
+         ></Button> */}
       </View>
     </View>
   );
@@ -121,6 +158,7 @@ function Login() {
 export default Login;
 const styles = StyleSheet.create({
   mainContainer: {
+    justifyContent: 'flex-end',
     flex: 1,
     paddingLeft: 15,
     paddingRight: 15,
@@ -128,48 +166,55 @@ const styles = StyleSheet.create({
     backgroundColor: kCardColor1,
   },
   container: {
-    height: hp('80%'),
+    height: hp('70%'),
     width: wp('100%'),
     backgroundColor: '#F5796D',
-    marginTop: 100,
+    // marginTop: 100,
     alignSelf: 'center',
-    borderTopRightRadius: 60,
-    borderTopLeftRadius: 60,
+    borderTopRightRadius: 80,
+    borderTopLeftRadius: 80,
+    alignItems: 'center'
   },
   header: {
     textAlign: 'center',
     color: 'white',
     fontWeight: 'bold',
     fontSize: 60,
-    marginTop: 70,
+    paddingBottom: 60
   },
   label: {
     color: '#1A1B2F',
     textAlign: 'center',
     fontSize: wp('7%'),
     // marginLeft: 40,
-    marginTop: 70,
+    marginTop: 50,
     fontWeight: 'bold',
   },
   desc: {
     color: '#1A1B2F',
     textAlign: 'center',
     fontSize: wp('5%'),
-    // marginLeft: 40,
     marginTop: 2,
   },
-  input: {
-    color: '#1A1B2F',
+  textInput: {
+    marginLeft: 5,
+    backgroundColor: klightgreyColor,
     fontSize: 15,
-    marginTop: 40,
-    borderColor: '#1A1B2F',
-    alignSelf: 'center',
-    width: wp('80%'),
-    height: hp('6%'),
-    borderRadius: 10,
-    backgroundColor: '#f1f2f6',
-    paddingLeft: 7,
+    color: 'black',
+    paddingLeft: 10,
+    fontWeight: '600'
   },
+  inputContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: klightgreyColor,
+    width: wp('80%'),
+    borderRadius: 10,
+    height: 60,
+    width: wp('85%'),
+    // marginTop: 15
+  },
+
   container2: {
     flexDirection: 'row',
     marginLeft: 30,
@@ -177,5 +222,11 @@ const styles = StyleSheet.create({
     marginTop: 30,
     justifyContent: 'space-evenly',
   },
+  button: {
+    marginTop: 40,
+    width: wp('85%'),
+    height: 50,
+    borderRadius: 50,
+  }
 
 });
