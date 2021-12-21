@@ -12,5 +12,13 @@
      4.The vendor receives the notification and the link will redirect the vendor to register on the QuoteIT's Platform.
      5.The Vendor uploads the quotation to the queries he approves, which is reflected on Client's Dashboard.
 
+![image](https://user-images.githubusercontent.com/79246912/146863694-e46ad944-5950-497c-8c25-fe9b0d283160.png)
+![image](https://user-images.githubusercontent.com/79246912/146863764-bb11ef5d-3cb6-4383-90e6-bfa24fa77098.png)
+![image](https://user-images.githubusercontent.com/79246912/146863773-dcd053fe-aa51-4480-b95a-7d87c3956992.png)
+![image](https://user-images.githubusercontent.com/79246912/146863863-bdf9d4e5-2cee-4598-87bc-601e543c675e.png)
+![image](https://user-images.githubusercontent.com/79246912/146863849-f47781ec-ce14-497f-b129-9b5bb4014d89.png)
+
+
+
 ## Authored by
 Shrey Parekh (Fullstack developer at unicode)
