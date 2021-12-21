@@ -1,5 +1,25 @@
 # QuoteIT Mobile Application
 
+# Contribution Guidelines
+
+1. Fork this repo
+2. Clone your forked repo `git clone`
+3. Add the main repo as upstream `git remote add upstream {url}`
+4. Make your changes and push to your(forked) repo.
+5. Create a pull request from github to main repo.
+
+
+# Folder structure
+```
+src
+ |- screens (screen lvl components)
+ |- assets
+ |- controllers (business logic)
+ |- config (configuration file e.g colors etc)
+ |- components (helper components)
+ |- authentication
+```
+
 ### Purpose of the App:
  
  Most of the time is spent finding the best prices from suppliers. To make it easier for a company to send their requirements and get the prices from multiple vendors, we have created a portal. When a client raises a request for a good, a vendor gets a WhatsApp notification. The link on the WhatsApp notification asks the Vendor to Sign in and see the Requirement Document and Post a quote. We have allowed the Client to Create the document and assign fields for Name & Quantity which the vendor can fill. The client can see all the vendor bids easily and select one of them.
@@ -17,6 +37,7 @@
 
 
 
+
 ## Authored by
-Yash Shah (React Native developer at Unicode)
+Yash Shah (React Native developer at Unicode),
 Priyambi Hiran (React Native developer at Unicode)
