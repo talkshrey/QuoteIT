@@ -11,3 +11,6 @@
        notification(which includes link to QuoteIT's App or Web) is sent to all the Potential.
      4.The vendor receives the notification and the link will redirect the vendor to register on the QuoteIT's Platform.
      5.The Vendor uploads the quotation to the queries he approves, which is reflected on Client's Dashboard.
+
+## Authored by
+Shrey Parekh (Fullstack developer at unicode)
