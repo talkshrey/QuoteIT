@@ -49,8 +49,8 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ![image](https://user-images.githubusercontent.com/79246912/146863863-bdf9d4e5-2cee-4598-87bc-601e543c675e.png)
 ![image](https://user-images.githubusercontent.com/79246912/146863849-f47781ec-ce14-497f-b129-9b5bb4014d89.png)
 ![image](https://user-images.githubusercontent.com/79246912/146869039-59fc4895-9192-4d92-b8bd-9829f362aa0d.png)
-
-
+![image](https://user-images.githubusercontent.com/74039736/146870209-9c9143f7-7f1e-4f23-aa2b-9abefd7eeb9f.png)
+The user dashboard is updated with quotations
 
 
 ## Authored by
