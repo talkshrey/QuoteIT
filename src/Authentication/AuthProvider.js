@@ -68,8 +68,7 @@ export const AuthProvider = ({ children }) => {
                         console.warn(E);
                     }
                 },
-
-                signUp: async(name,email,password,contact, location, role) => { 
+                signUp: async(name,email,password,contact, location, role, companyName, dealsin) => { 
                     var myHeaders = new Headers();
                     myHeaders.append("Content-Type", "application/json");
                 
@@ -79,7 +78,9 @@ export const AuthProvider = ({ children }) => {
                       "password": password,
                       "contact": contact,
                       "location":location,
-                      "role":role
+                      "role":role,
+                      "companyName":companyName,
+                      "dealsin": dealsin
                     });
                 
                     var requestOptions = {
@@ -100,6 +101,7 @@ export const AuthProvider = ({ children }) => {
                                     ]);
                                 } else {
                                     console.log(result);
+                                    AsyncStorage.setItem('token', result);
                                     setCurrentUser(result);
                                     setIsLoading(false);
                                 }

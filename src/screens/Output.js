@@ -3,7 +3,8 @@ import {
   View,
   StyleSheet,
   Text,
-  Button
+  Button,
+  ToastAndroid
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -16,21 +17,42 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 
 function Output({ route }) {
   const [token, setToken] = useState('');
+  const [email,setemail]= useState('');
+  const [contact, setContact] = useState(null);
+  const [name, setName] = useState('');
+
   useEffect(() => {
     async function fetchData() {
       try {
         const token = await AsyncStorage.getItem('token');
+        const email =await AsyncStorage.getItem('email');
+        const contact =await AsyncStorage.getItem('contact');
+        const name = await AsyncStorage.getItem('name');
         console.log(token);
         setToken(token);
+        setContact(contact);
+        setName(name);
+        setemail(email);
       } catch (error) {
         console.log(error);
       }
     }
     fetchData();
+
   }, [])
   var Category = route.params.m;
   var SubCategory = route.params.s;
   var model = route.params.o;
+  const showToastWithGravityAndOffset = () => {
+    ToastAndroid.showWithGravityAndOffset(
+      "Query successfully submitted",
+      ToastAndroid.SHORT,
+      ToastAndroid.BOTTOM,
+      25,
+      hp('10%')
+    );
+    return null;
+  };
   const whatsAppMessage = () => {
     var myHeaders = new Headers();
     myHeaders.append("Authorization", `Bearer ${token}`);
@@ -62,12 +84,12 @@ function Output({ route }) {
         colors={["#FECACA", "#F57960"]}
         style={styles.container1}>
         <Text style={styles.header}>Final Query</Text>
-        <Text style={styles.label}>Username </Text>
-        <Text style={styles.display}>Username</Text>
+        <Text style={styles.label}>Username</Text>
+        <Text style={styles.display}>{name}</Text>
         <Text style={styles.label}>Email Address </Text>
-        <Text style={styles.display}>Email Address</Text>
+        <Text style={styles.display}>{email}</Text>
         <Text style={styles.label}>Contact Number </Text>
-        <Text style={styles.display}>Contact Number</Text>
+        <Text style={styles.display}>{contact}</Text>
         <Text style={styles.label}> Category </Text>
         <Text style={styles.display}>{Category}</Text>
         <Text style={styles.label}>Sub-Category </Text>
@@ -76,7 +98,7 @@ function Output({ route }) {
         <Text style={styles.display}>{model}</Text>
         <View style={{ ...styles.button, backgroundColor: kCardColor1 }}>
           <TouchableOpacity style={{  alignItems: 'center', justifyContent: 'center' }}
-          onPress={whatsAppMessage}>
+          onPress={()=>{whatsAppMessage(), showToastWithGravityAndOffset()}}>
             <Text style={{ fontSize: 17, color: 'white', fontWeight: '500',marginTop:9 }}>GET QUOTATIONS</Text>
           </TouchableOpacity>
         </View>
