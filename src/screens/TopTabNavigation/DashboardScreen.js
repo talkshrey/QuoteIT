@@ -57,7 +57,7 @@ function Dashboard() {
     const renderItem = ({ item, index }) => {
         return (
             <View style={styles.container}>
-                <Text style={styles.label}>Vendor's Company:-{item['companyName']}</Text>
+                <Text style={styles.label}>Vendor's Name:-{item['vendorName']}</Text>
                 <Text style={styles.label}>Vendor's Contact:-{item['vendorContact']}</Text>
                 <Text style={styles.label}>Raw Price:-{item['rawPrice']}</Text>
                 <Text style={styles.label}>Final Price:-{item['afterTaxPrice']}</Text>
