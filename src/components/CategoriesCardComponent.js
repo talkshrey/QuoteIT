@@ -4,10 +4,10 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { kCardColor1 } from '../constants/colors';
 
-const images = ["appliances.jpg", "appliances.jpg", "appliances.jpg" , "appliances.jpg", "appliances.jpg", "appliances.jpg"];
+
 
 const CategoriesCardComponent = (props) => {
-     
+    const image = props.image;
     const [show, setShow] = useState(false);
 
     const showMore = () => {
@@ -38,11 +38,11 @@ const CategoriesCardComponent = (props) => {
                 show ?
                     <View>
                         <ImageBackground style={styles.imageContainer}
-                            source={require(`../assets/images/appliances.png`)
+                            source={image
                             }>
                         </ImageBackground>
                         <View style={{ marginLeft: 20, marginRight: 20, justifyContent: 'center', alignItems: 'center' }}>
-                            <Text style={{ textAlign: 'center', color: 'white' }} >ghdjhfgdsghfghgjhkscgbmlkxfbhokfcgnbjgcknbklgfcnzblkzfcnblzcvnbjnbjkndfbjkcdzfkjkjg</Text>
+                            <Text style={{ textAlign: 'center', color: 'white', marginTop:15 }} >QuoteIT provides you with wide range of appliances inclusive of laptops, fridges etc. to choose from and browse through variety of items.</Text>
                         </View>
                         <TouchableOpacity onPress={props.onPress}>
                             <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: 10, marginBottom: 10 }}>

@@ -206,13 +206,14 @@ function Register({ navigation }) {
                 AsyncStorage.clear();
                 AsyncStorage.setItem('email', email);
                 AsyncStorage.setItem('password', password);
+                AsyncStorage.setItem('contact', contact);
+                AsyncStorage.setItem('name', name);
                 if (clientcheck == true) {
-                  signUp(name, email, password, contact, location, "client");
+                  signUp(name, email, password, contact, location, "client", companyName, dealsin);
                 }
                 else {
-                  signUp(name, email, password, contact, location, "vendor");
+                  signUp(name, email, password, contact, location, "vendor", companyName, dealsin);
                 }
-
               }}>
               <Text style={{ fontSize: 22, color: 'white', fontWeight: '600' }}>
                 Sign Up

@@ -10,15 +10,23 @@ import { kCardColor1, kCardColor2, kCardColor3 } from '../../constants/colors';
 import ProductDetails from '../ProductDetails';
 
 
-function MarketScreen({navigation}) {
-   const url =[
-    'https://glacial-harbor-01488.herokuapp.com/sub-category-appliance',
-    'https://glacial-harbor-01488.herokuapp.com/sub-category-raw-materials',
-    'https://glacial-harbor-01488.herokuapp.com/sub-category-Healthcare',
-    'https://glacial-harbor-01488.herokuapp.com/sub-category-cars',
-    'https://glacial-harbor-01488.herokuapp.com/sub-category-beauty',
-    'https://glacial-harbor-01488.herokuapp.com/sub-category-fashion',
-   ]
+function MarketScreen({ navigation }) {
+    const url = [
+        'https://glacial-harbor-01488.herokuapp.com/sub-category-appliance',
+        'https://glacial-harbor-01488.herokuapp.com/sub-category-raw-materials',
+        'https://glacial-harbor-01488.herokuapp.com/sub-category-Healthcare',
+        'https://glacial-harbor-01488.herokuapp.com/sub-category-cars',
+        'https://glacial-harbor-01488.herokuapp.com/sub-category-beauty',
+        'https://glacial-harbor-01488.herokuapp.com/sub-category-fashion',
+    ]
+    const image = [
+        require('../../assets/images/appliances.png'),
+        require('../../assets/images/raw.png'),
+        require('../../assets/images/medicalequip.png'),
+        require('../../assets/images/cars.png'),
+        require('../../assets/images/beauty.png'),
+        require('../../assets/images/fashion.png'),
+    ];
     useEffect(() => {
         getCategories();
     }, []);
@@ -41,15 +49,15 @@ function MarketScreen({navigation}) {
                 <CategoriesCardComponent
                     color={kCardColor1}
                     title={item["category-name"]}
-                    onPress={()=>navigation.navigate('ProductDetails',{u:url[index],c:item["category-name"]})} />
+                    image={image[index]}
+                    onPress={() => navigation.navigate('ProductDetails', { u: url[index], c: item["category-name"] })} />
             </View>
-
         )
     }
     return (
         <View style={styles.container}>
             <LinearGradient
-                colors={['#E32747', '#E3556D', '#E399A5']}
+                colors={["#F57960", "#FECACA",]}
                 style={styles.linearGradient}>
                 <FlatList
                     data={category}

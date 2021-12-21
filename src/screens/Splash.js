@@ -15,13 +15,14 @@ const Splash = ({navigation}) => {
       colors={['#1A1B2F', '#162447', '#1F4068']}
       style={styles.linearGradient}>
       <LottieView
-        source={require('../assets/quote.json')}
+        source={require('../assets/quotefinal.json')}
         autoPlay={true}
         loop
         style={styles.lottieview}
       />
 
       <Text style={styles.header}>QuoteIT</Text>
+      <Text style={{...styles.header, fontSize:20, marginTop:7}}>"The best place for the best prices"</Text>
     </LinearGradient>
 
 
