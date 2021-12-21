@@ -14,3 +14,9 @@
      6.The Vendor uploads the quotation to the queries he approves.
      
 <img src="https://user-images.githubusercontent.com/79246912/146864614-30c092d9-e77d-4c57-adaa-8ed6fb6bca06.png"  width="300" height="600">                            <img src="https://user-images.githubusercontent.com/79246912/146864629-047e0a5f-277d-4ef3-a2ba-857eb625f6a0.png"  width="300" height="600">                        <img src="https://user-images.githubusercontent.com/79246912/146864638-f1f5e1fe-4f79-491a-bc77-973b6803dab6.png"  width="300" height="600">
+
+
+
+## Authored by
+Yash Shah (React Native developer at Unicode)
+Priyambi Hiran (React Native developer at Unicode)
