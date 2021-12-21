@@ -17,10 +17,10 @@ export default function FinalVendor() {
     const handleSubmit = async e => {
 
         e.preventDefault()
-        // var key2 = localStorage.getItem('tok')
+        var key2 = localStorage.getItem('token')
         var key = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWJlMTgyNzU0MmIzZDYyNzdlOGM3NDQiLCJpYXQiOjE2Mzk5NDI4OTYsImV4cCI6MTY3MTQ3ODg5Nn0.e6TZ1vBSHWrfLTjQdDmGsVlpjtyVgnC-WACas6CX_0M'
         var myHeaders = new Headers();
-        myHeaders.append("Authorization", `Bearer ${key}`);
+        myHeaders.append("Authorization", `Bearer ${key2}`);
         myHeaders.append("Content-Type", "application/json");
 
         var raw = JSON.stringify({

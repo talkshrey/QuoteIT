@@ -23,7 +23,7 @@ export default function Query() {
             "productName": "name",
             "productCategory": cat,
             "productSubCategory": sub_cat,
-            "productModel": "Mac"
+            "productModel": model_name
         }),
         redirect: 'follow'
         };
@@ -40,10 +40,11 @@ export default function Query() {
 
     return (
         <div className="flex flex-col grow items-center">
-            <div className="px-5 py-10 text-lg text-white"> Checkout </div>
-            <div className="bg-white rounded-md px-8 py-10 text-center" style={{height:'400px', width:'500px'}}>
+            <div className="px-5 py-10 text-4xl text-white text-bold"> CHECKOUT </div>
+            <div className="bg-white rounded-md px-8 py-10 text-center" style={{height:'400px', width:'500px', backgroundImage:'linear-gradient(#F5796D, #FECACA)'}}>
+                <p> After posting this query, the vendor will be notified </p>
                 <form className="flex flex-col text-lg" onSubmit={handleSubmit}>
-                    <b> Category </b> {cat}
+                    <b> Category</b> {cat} 
                     <b> Sub-Category </b> {sub_cat}
                     <b> Model </b> {model_name}
                     <button className="px-5 py-2 rounded-md align-center mt-24 bg-red-200"> Submit query </button>

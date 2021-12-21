@@ -12,7 +12,7 @@ import wires from '../Assets/Images/wires.png'
 import wood from '../Assets/Images/wood.png'
 import raw from '../Assets/Images/raw.jpeg'
 import CloseIcon from '@mui/icons-material/Close';
-// import cloth from '../Assets/Images/cloth.png'
+import cloth from '../Assets/Images/cloth.png'
 
 const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
@@ -27,11 +27,13 @@ export default function Booking4() {
     const [open2, setOpen2] = useState(false)
     const [open3, setOpen3] = useState(false)
     const [open4, setOpen4] = useState(false)
+    const [open5, setOpen5] = useState(false)
     const [data, setData] = useState([0, 1, 2, 3, 4])
     const closeModal = () => setOpen(false)
     const closeModal2 = () => setOpen2(false)
     const closeModal3 = () => setOpen3(false)
     const closeModal4 = () => setOpen4(false)
+    const closeModal5 = () => setOpen5(false)
 
     var requestOptions = {
         method: 'GET',
@@ -61,8 +63,8 @@ export default function Booking4() {
     }, [])
 
     async function buy(e) {
-        sessionStorage.setItem('model', document.getElementById("model").innerHTML)
-        sessionStorage.setItem('sub', document.getElementById("but").innerHTML)
+        sessionStorage.setItem('model', document.getElementById("model").innerHTML.trim())
+        sessionStorage.setItem('sub', document.getElementById("but").innerHTML.trim())
         sessionStorage.setItem('cat', "Raw")
         console.log(e.target.value)
         hist.push('/query')
@@ -84,9 +86,9 @@ export default function Booking4() {
                                         <div className="w-max h-max bg-gradient-to-r from-red-200 to-blue-500 rounded-md p-5">
                                             <button className="rounded-full bg-white text-black px-3 text-2xl" onClick={closeModal}> &times; </button>
                                             <div className="flex flex-row justify-around">
-                                                <p id='model'> Cement 1 </p> <img src={cement} onClick={buy} style={{ cursor: 'pointer' }} alt="laptop" className="w-32" />
-                                                <p id='model'> Cement 2 </p> <img src={cement} onClick={buy} style={{ cursor: 'pointer' }} alt="laptop" className="w-32" />
-                                                <p id='model'> Cement 3 </p> <img src={cement} onClick={buy} style={{ cursor: 'pointer' }} alt="laptop" className="w-32" />
+                                                <p id='model'> UltraTech </p> <img src={cement} onClick={buy} style={{ cursor: 'pointer' }} alt="laptop" className="w-32" />
+                                                <p id='model'> ACC Cement</p> <img src={cement} onClick={buy} style={{ cursor: 'pointer' }} alt="laptop" className="w-32" />
+                                                <p id='model'> Ambuja Cement</p> <img src={cement} onClick={buy} style={{ cursor: 'pointer' }} alt="laptop" className="w-32" />
                                             </div>
                                         </div>
                                     </Popup>
@@ -117,6 +119,7 @@ export default function Booking4() {
                             <Item sx={{ height: '400px', backgroundImage: 'linear-gradient(#F5796D, #FECACA)' }}>
                                 <p className='text-blue-1000 text-3xl font-bold'> Raw </p>
                                 <img src={raw} alt='raw' className='w-6/12 ml-48' />
+                                <p style={{color:'#1A1B2F'}} className='p-5 text-lg font-sans'> QuoteIT provides you with wide range of raw materials </p>
                             </Item>
                         </Grid>
                         <Grid item xs={4}>
@@ -164,16 +167,16 @@ export default function Booking4() {
                             <Item sx={{ height: '185px', backgroundImage: 'linear-gradient(to right, #F5796D, #FECACA)' }}>
                                 {data[4].subCatName}
                                     <div className="flex flex-row items-center justify-around">
-                                        <img src={wood} alt="laptop" className="w-32" />
-                                        <button type="button" id="but" className="px-5 py-3 bg-white rounded-md" onClick={() => setOpen4(o => !o)}> {data[4].subCatName} </button>
-                                        <Popup open={open4} closeOnDocumentClick onClose={closeModal4} position="right top">
+                                        <img src={cloth} alt="laptop" className="w-32" />
+                                        <button type="button" id="but" className="px-5 py-3 bg-white rounded-md" onClick={() => setOpen5(o => !o)}> {data[4].subCatName} </button>
+                                        <Popup open={open5} closeOnDocumentClick onClose={closeModal5} position="right top">
                                             <div className="w-max h-max bg-gradient-to-r from-white to-blue-500 rounded-md p-5">
-                                                <CloseIcon onClick={closeModal4}/>
+                                                <CloseIcon onClick={closeModal5}/>
                                                 {/* <button className="rounded-full bg-white text-black text-2xl" onClick={closeModal4}> &times; </button> */}
                                                 <div className="flex flex-row justify-around">
-                                                    <p id='model'> Wood 1 </p> <img src={wood} onClick={buy} style={{ cursor: 'pointer' }} alt="laptop" className="w-32" />
-                                                    <p id='model'> Wood 2 </p> <img src={wood} onClick={buy} style={{ cursor: 'pointer' }} alt="laptop" className="w-32" />
-                                                    <p id='model'> Wood 3 </p> <img src={wood} onClick={buy} style={{ cursor: 'pointer' }} alt="laptop" className="w-32" />
+                                                    <p id='model'> Cloth 1 </p> <img src={cloth} onClick={buy} style={{ cursor: 'pointer' }} alt="laptop" className="w-32" />
+                                                    <p id='model'> Cloth 2 </p> <img src={cloth} onClick={buy} style={{ cursor: 'pointer' }} alt="laptop" className="w-32" />
+                                                    <p id='model'> Cloth 3 </p> <img src={cloth} onClick={buy} style={{ cursor: 'pointer' }} alt="laptop" className="w-32" />
                                                 </div>
                                                 <button />
                                             </div>

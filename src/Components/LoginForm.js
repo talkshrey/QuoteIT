@@ -37,13 +37,14 @@ export default function LoginForm() {
         .then(result => {
             setTok(result)
             console.log(result)
+            localStorage.setItem('token', result)
         })
         .catch(error => console.log('error', error));
 
         hist.push('/vendor')
     }
 
-    localStorage.setItem('token', tok)
+    
 
     return (
 

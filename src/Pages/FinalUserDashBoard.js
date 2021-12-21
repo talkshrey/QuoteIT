@@ -6,12 +6,14 @@ import Typography from '@mui/material/Typography';
 
 export default function FinalUserDashBoard() {
 
-    var key = localStorage.getItem('token')
+    var arr = { 'companyName': 'none', 'rawPrice': 'none', 'afterTaxPrice': 'none', 'vendorContact': 'none', 'quoteOf': 'none' }
+
+    var key = localStorage.getItem('tok')
     var key2 = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWJlM2IyYmRjMjg0NzE3OTJkNGU3OWMiLCJpYXQiOjE2Mzk4NjcwNDcsImV4cCI6MTY3MTQwMzA0N30.gAYUoakAHMKKltkWlVYikGrcReNmeSAC8U7TRUTmkhg'
-    const [quote, setQuote] = useState([{ 0: 'hello' }, { 1: 'world' }])
+    const [quote, setQuote] = useState([arr])
 
     var myHeaders = new Headers();
-    myHeaders.append("Authorization", `Bearer ${key2}`);
+    myHeaders.append("Authorization", `Bearer ${key}`);
 
     var requestOptions = {
         method: 'GET',
@@ -26,7 +28,10 @@ export default function FinalUserDashBoard() {
                 setQuote(result.data)
                 console.log(result.data)
             })
-            .catch(error => console.log('error', error));
+            .catch(error => {
+                console.log('error', error)
+                setQuote([arr])
+            });
     }, [])
 
 
