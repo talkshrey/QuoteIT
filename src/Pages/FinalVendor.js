@@ -77,6 +77,8 @@ export default function FinalVendor() {
         setColor6('#F5796D')
     }
     return (
+        <div>
+            <div className='text-center text-white text-lg'> The following vendors are interested in your product </div>
         <div className='flex flex-row'>
             <div className="text-white grid grid-rows-3 grid-flow-col gap-4 p-10 w-6/12">
                 <div>
@@ -89,7 +91,7 @@ export default function FinalVendor() {
                                 UltraTech
                             </Typography>
                             <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                                9833447698
+                                talkshrey@gmail.com
                             </Typography>
                             <Typography variant="body2">
                                 <br />
@@ -109,7 +111,7 @@ export default function FinalVendor() {
                                 UltraTech
                             </Typography>
                             <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                                7045141518
+                                lokita@gmail.com
                             </Typography>
                             <Typography variant="body2">
                                 <br />
@@ -129,7 +131,7 @@ export default function FinalVendor() {
                                 ACC Cement
                             </Typography>
                             <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                                9326549053
+                                yash@gmail.com
                             </Typography>
                             <Typography variant="body2">
                                 <br />
@@ -149,7 +151,7 @@ export default function FinalVendor() {
                                 ACC Cement
                             </Typography>
                             <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                                887925321
+                                hiran@gmail.com
                             </Typography>
                             <Typography variant="body2">
                                 <br />
@@ -163,13 +165,13 @@ export default function FinalVendor() {
                     <Card sx={{ minWidth: 275, backgroundColor: color4 }}>
                         <CardContent>
                             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                                Ankit Gupta
+                                Dummy Client
                             </Typography>
                             <Typography variant="h5" component="div">
                                 ACC Cement
                             </Typography>
                             <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                                9834539485
+                                dummy@gmail.com
                             </Typography>
                             <Typography variant="body2">
                                 <br />
@@ -183,13 +185,13 @@ export default function FinalVendor() {
                     <Card sx={{ minWidth: 275, backgroundColor: color6 }}>
                         <CardContent>
                             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                                Manav Kamdar
+                                Dummy Client 2
                             </Typography>
                             <Typography variant="h5" component="div">
                                 Ambuja Cement
                             </Typography>
                             <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                                9823349852
+                                dummy2@gmail.com
                             </Typography>
                             <Typography variant="body2">
                                 <br />
@@ -239,6 +241,7 @@ export default function FinalVendor() {
                 </div>
                 <button type='submit' style={{backgroundColor:'#1A1B2F'}} className="rounded-md px-8 text-lg text-white py-2 w-max font-sans"> Submit </button>
             </form>
+        </div>
         </div>
     )
 }
