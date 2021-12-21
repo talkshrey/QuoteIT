@@ -34,7 +34,7 @@ src
      6.The Vendor uploads the quotation to the queries he approves.
      
 <img src="https://user-images.githubusercontent.com/79246912/146864614-30c092d9-e77d-4c57-adaa-8ed6fb6bca06.png"  width="300" height="600">                            <img src="https://user-images.githubusercontent.com/79246912/146864629-047e0a5f-277d-4ef3-a2ba-857eb625f6a0.png"  width="300" height="600">                        <img src="https://user-images.githubusercontent.com/79246912/146864638-f1f5e1fe-4f79-491a-bc77-973b6803dab6.png"  width="300" height="600">        <img src="https://user-images.githubusercontent.com/79246912/146872468-a2f70f53-dd03-4300-b7d7-efddca1defeb.png"  width="300" height="600">                            <img src="https://user-images.githubusercontent.com/79246912/146872478-eaba050b-0ed2-4eaf-a6b7-e6b703a4b09e.png"  width="300" height="600">                        <img src="https://user-images.githubusercontent.com/79246912/146872486-a70b344b-d8c8-478e-a2e1-2b3444b2cd96.png"  width="300" height="600">      <img src="https://user-images.githubusercontent.com/79246912/146872522-65409a1d-d054-4a04-9b11-2ff689fb703b.png"  width="300" height="600">                            <img src="https://user-images.githubusercontent.com/79246912/146872552-ddc405e1-8c1d-40c6-8c60-49b7277531d8.png"  width="300" height="600">                        <img src="https://user-images.githubusercontent.com/79246912/146872568-7fe85fad-b57d-4e2d-bad7-eede39400783.png"  width="300" height="600">
-
+<img src="https://user-images.githubusercontent.com/79246912/146880964-c6dda169-d3fc-48b5-82f4-1871e51505b1.png"  width="300" height="600">
 
 
 
