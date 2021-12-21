@@ -38,7 +38,7 @@ function Quotation({ navigation }) {
     var myHeaders = new Headers();
     myHeaders.append(
       'Authorization',
-      'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWJlMTgyNzU0MmIzZDYyNzdlOGM3NDQiLCJpYXQiOjE2Mzk5NDI4OTYsImV4cCI6MTY3MTQ3ODg5Nn0.e6TZ1vBSHWrfLTjQdDmGsVlpjtyVgnC-WACas6CX_0M',
+      'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWMwZTQ0NTZhNmM2OWNmMjE5NzcwZDUiLCJpYXQiOjE2NDAwNjY4NDAsImV4cCI6MTY3MTYwMjg0MH0.tEfolXpd2ku1uwwJAGs-TDjOygDq4x-DIF1X_i3Wa3g',
     );
     myHeaders.append('Content-Type', 'application/json');
 
