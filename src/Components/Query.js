@@ -47,7 +47,7 @@ export default function Query() {
                     <b> Category</b> {cat} 
                     <b> Sub-Category </b> {sub_cat}
                     <b> Model </b> {model_name}
-                    <button className="px-5 py-2 rounded-md align-center mt-24 bg-red-200"> Submit query </button>
+                    <button className="px-5 py-2 text-white rounded-md align-center mt-24" style={{backgroundColor:'#1A1B2F'}}> Submit query </button>
                 </form>
             </div>       
         </div>
